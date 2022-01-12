@@ -19,6 +19,18 @@
 		19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41E278E8C6C0086197C /* SceneDelegate.swift */; };
 		19D7D467278E97F60086197C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D7D427278E8C6D0086197C /* LaunchScreen.storyboard */; };
 		19D7D468278E97F60086197C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D7D425278E8C6D0086197C /* Assets.xcassets */; };
+		19D7D471278E9A6C0086197C /* WebServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D470278E9A6C0086197C /* WebServicesManager.swift */; };
+		19D7D472278E9A6C0086197C /* WebServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D470278E9A6C0086197C /* WebServicesManager.swift */; };
+		19D7D474278E9A970086197C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D473278E9A970086197C /* NetworkManager.swift */; };
+		19D7D475278E9A970086197C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D473278E9A970086197C /* NetworkManager.swift */; };
+		19D7D477278E9AD10086197C /* SEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D476278E9AD10086197C /* SEError.swift */; };
+		19D7D478278E9AD10086197C /* SEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D476278E9AD10086197C /* SEError.swift */; };
+		19D7D47A278E9B290086197C /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D479278E9B290086197C /* NetworkConfiguration.swift */; };
+		19D7D47B278E9B290086197C /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D479278E9B290086197C /* NetworkConfiguration.swift */; };
+		19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D47C278E9BAC0086197C /* SEKeys.swift */; };
+		19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D47C278E9BAC0086197C /* SEKeys.swift */; };
+		19D7D482278E9F890086197C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19D7D485278E9F890086197C /* Localizable.strings */; };
+		19D7D483278E9F890086197C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19D7D485278E9F890086197C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +66,13 @@
 		19D7D440278E8C6D0086197C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19D7D46C278E97F60086197C /* Series-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Series-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D7D46E278E98580086197C /* Info_Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_Test.plist; sourceTree = "<group>"; };
+		19D7D470278E9A6C0086197C /* WebServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesManager.swift; sourceTree = "<group>"; };
+		19D7D473278E9A970086197C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		19D7D476278E9AD10086197C /* SEError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEError.swift; sourceTree = "<group>"; };
+		19D7D479278E9B290086197C /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		19D7D47C278E9BAC0086197C /* SEKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEKeys.swift; sourceTree = "<group>"; };
+		19D7D484278E9F890086197C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		19D7D486278EA0430086197C /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +194,7 @@
 			children = (
 				19D7D46E278E98580086197C /* Info_Test.plist */,
 				19D7D42A278E8C6D0086197C /* Info.plist */,
+				19D7D485278E9F890086197C /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +232,7 @@
 		19D7D454278E92BF0086197C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D47C278E9BAC0086197C /* SEKeys.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -297,6 +318,10 @@
 		19D7D45F278E97930086197C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D470278E9A6C0086197C /* WebServicesManager.swift */,
+				19D7D473278E9A970086197C /* NetworkManager.swift */,
+				19D7D476278E9AD10086197C /* SEError.swift */,
+				19D7D479278E9B290086197C /* NetworkConfiguration.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -403,6 +428,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 19D7D410278E8C6C0086197C;
 			productRefGroup = 19D7D41A278E8C6C0086197C /* Products */;
@@ -423,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19D7D429278E8C6D0086197C /* LaunchScreen.storyboard in Resources */,
+				19D7D482278E9F890086197C /* Localizable.strings in Resources */,
 				19D7D426278E8C6D0086197C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19D7D467278E97F60086197C /* LaunchScreen.storyboard in Resources */,
+				19D7D483278E9F890086197C /* Localizable.strings in Resources */,
 				19D7D468278E97F60086197C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,7 +485,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D7D471278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */,
+				19D7D477278E9AD10086197C /* SEError.swift in Sources */,
+				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
+				19D7D474278E9A970086197C /* NetworkManager.swift in Sources */,
+				19D7D47A278E9B290086197C /* NetworkConfiguration.swift in Sources */,
 				19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */,
 				19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */,
 			);
@@ -483,7 +516,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D7D472278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D462278E97F60086197C /* SEHomeViewController.swift in Sources */,
+				19D7D478278E9AD10086197C /* SEError.swift in Sources */,
+				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
+				19D7D475278E9A970086197C /* NetworkManager.swift in Sources */,
+				19D7D47B278E9B290086197C /* NetworkConfiguration.swift in Sources */,
 				19D7D463278E97F60086197C /* AppDelegate.swift in Sources */,
 				19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */,
 			);
@@ -513,6 +551,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		19D7D485278E9F890086197C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19D7D484278E9F890086197C /* en */,
+				19D7D486278EA0430086197C /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -520,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -581,6 +629,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

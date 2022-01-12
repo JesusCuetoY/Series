@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Series
+
+  Created by Jesus Cueto on 1/12/22.
+  
+*/
+
+// MARK: - Network
+"SE_SERVER_ERROR" = "Servicio no disponible.";
+"SE_TIMEOUT_ERROR" = "Se culminó el tiempo de espera.";
+"SE_OFFLINE_ERROR" = "El estado de conexión parece estar offline.";
+"SE_GENERAL_ERROR" = "Lo sentimos, ocurrió un error.\nPor favor, comuníquese con el proveedor.";
+"SE_PARSER_ERROR_TITLE" = "Error de Parser";
+"SE_PARSER_ERROR_MESSAGE" = "No se pudo serializar el objeto";
+// MARK: - Database
+"SE_STORAGE_SAVE_ERROR" = "Falló el guardado de datos.";
+"SE_STORAGE_DELETE_ERROR" = "Falló la eliminación de datos.";
+"SE_STORAGE_FETCH_ERROR" = "Falló la obtención de datos.";
