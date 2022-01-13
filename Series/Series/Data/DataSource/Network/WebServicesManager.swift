@@ -201,6 +201,22 @@ internal class WebServicesResponse: NSObject {
     }
     
     /**
+     Method that allows the creation of Get URL path with the parameters sent.
+    - Parameter parameters: The parameters sent. If the parameters are not in a dictionary, then the conversion cannot be done.
+    - Parameter url: URL path in `String`
+    - Returns: The `String` object with the new composed URL or sent same URL path if there are not dictionary.
+    */
+    private class func formGetURL(urlPath url: String, parameters: Any) -> String {
+        var auxURL = url
+        if let param = parameters as? [String: Any] {
+            let stringParams = param.map { "\($0.key) = \($0.value)" }.joined(separator: "&")
+            auxURL = auxURL + "?" + stringParams
+        }
+        
+        return auxURL
+    }
+    
+    /**
     Method that allows converting the code of an error `NSError` of the web services into a tuple whose values ​​are the state and its respective message if necessary.
     - Parameter error: The error of the web service or `nil` if there was none.
     - Returns: A tuple whose values ​​are: the constant of the type `WebServicesResponseState` and the respective message if necessary. Possible return constants are `Success` (default value),` Failure`, `Canceled`,` Timeout`. Only for the case `Success` and` Canceled` there will be no message.
@@ -316,7 +332,10 @@ internal class WebServicesResponse: NSObject {
     */
     internal class func getWithURL(_ URL: Foundation.URL?, parameters: Any?, dataTask: UnsafeMutablePointer<URLSessionDataTask?>, completionHandler: @escaping (_ webServicesResponse: WebServicesResponse) -> Void) {
         var data: Data? = nil
+        var composedURL = URL
         if let parameters = parameters {
+            let urlPath = self.formGetURL(urlPath: URL?.path ?? SEKeys.MessageKeys.emptyText, parameters: parameters)
+            composedURL = Foundation.URL(string: urlPath)
             do {
                 data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             }
@@ -326,10 +345,10 @@ internal class WebServicesResponse: NSObject {
         }
         
         //Print send
-        print(URL as Any)
+        print(composedURL as Any)
         print(parameters as Any)
         
-        var request = URLRequest(url: URL!)
+        var request = URLRequest(url: composedURL!)
         request.httpMethod = "GET"
         request.httpBody = data
         

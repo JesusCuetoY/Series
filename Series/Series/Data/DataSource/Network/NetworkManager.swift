@@ -94,7 +94,7 @@ extension NetworkManager: NetworkManagerProtocol {
     func getRequest<T, U>(_ url: URL, returningClass: T.Type?, returningError: U.Type?, parameters: Any?, success: @escaping (T) -> Void, failure: @escaping (U) -> Void) where T : Decodable, T : Encodable, U : Decodable, U : Encodable {
         var dataTask: URLSessionDataTask?
         WebServicesManager.contentType = .Raw
-        WebServicesManager.getWithURL(url, parameters: nil, dataTask: &dataTask) { [unowned self] (webServiceResponse) in
+        WebServicesManager.getWithURL(url, parameters: parameters, dataTask: &dataTask) { [unowned self] (webServiceResponse) in
             self.manage(response: webServiceResponse, returningClass: returningClass, returningError: returningError, success: success, failure: failure)
         }
     }

@@ -21,6 +21,8 @@ internal struct SEKeys {
         }()
         
         // MARK: - Series's URLs
+        static let showListURL = "shows"
+        static let showSearchURL = "search/shows"
     }
 
     // MARK: - Message keys
