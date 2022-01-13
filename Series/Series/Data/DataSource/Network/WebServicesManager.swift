@@ -132,6 +132,16 @@ internal class WebServicesResponse: NSObject {
     /// El nombre para obtener el "token" de inicio de sesión desde el `NSUserDefaults`.
     @objc internal static var loginTokenKey = "WebServicesManagerLoginTokenKey"
     
+    internal static var session: URLSession = {
+        // Set In-Memory Cache to 1024 MB
+        URLCache.shared.memoryCapacity = 1024 * 1024 * 1024
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        configuration.httpAdditionalHeaders = WebServicesManager.additionalHeaders()
+        configuration.timeoutIntervalForRequest = WebServicesManager.timeoutInterval
+        return URLSession(configuration: configuration)
+    }()
+    
     // MARK: - Setup methods
     
     /**
@@ -209,7 +219,7 @@ internal class WebServicesResponse: NSObject {
     private class func formGetURL(urlPath url: String, parameters: Any) -> String {
         var auxURL = url
         if let param = parameters as? [String: Any] {
-            let stringParams = param.map { "\($0.key) = \($0.value)" }.joined(separator: "&")
+            let stringParams = param.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
             auxURL = auxURL + "?" + stringParams
         }
         
@@ -271,12 +281,7 @@ internal class WebServicesResponse: NSObject {
         var request = URLRequest(url: URL!)
         request.httpMethod = "POST"
         request.httpBody = data
-        
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.httpAdditionalHeaders = self.additionalHeaders()
-        sessionConfiguration.timeoutIntervalForRequest = self.timeoutInterval
-        
-        let session = URLSession(configuration: sessionConfiguration)
+
         uploadTask.pointee = session.uploadTask(with: request, from: data, completionHandler: { (data: Data?, URLResponse: URLResponse?, error: Error?) -> Void in
             var response: Any? = nil /* The response from the web service. `nil` if an error occurred or the parsing was not possible. */
             if error == nil { /* If there is no error in the response, there is data... */
@@ -331,17 +336,10 @@ internal class WebServicesResponse: NSObject {
     - Parameter completionHandler: Block of code that receives a `WebServicesResponse` object, which contains the data of the service response.
     */
     internal class func getWithURL(_ URL: Foundation.URL?, parameters: Any?, dataTask: UnsafeMutablePointer<URLSessionDataTask?>, completionHandler: @escaping (_ webServicesResponse: WebServicesResponse) -> Void) {
-        var data: Data? = nil
         var composedURL = URL
         if let parameters = parameters {
-            let urlPath = self.formGetURL(urlPath: URL?.path ?? SEKeys.MessageKeys.emptyText, parameters: parameters)
+            let urlPath = self.formGetURL(urlPath: URL?.relativeString ?? SEKeys.MessageKeys.emptyText, parameters: parameters)
             composedURL = Foundation.URL(string: urlPath)
-            do {
-                data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-            }
-            catch {
-                print("\(self) - \(#function) / Error trying to convert the parameters to a JSON object.")
-            }
         }
         
         //Print send
@@ -350,13 +348,7 @@ internal class WebServicesResponse: NSObject {
         
         var request = URLRequest(url: composedURL!)
         request.httpMethod = "GET"
-        request.httpBody = data
         
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.httpAdditionalHeaders = self.additionalHeaders()
-        sessionConfiguration.timeoutIntervalForRequest = self.timeoutInterval
-        
-        let session = URLSession(configuration: sessionConfiguration)
         dataTask.pointee = session.dataTask(with: request, completionHandler: { (data: Data?, URLResponse: Foundation.URLResponse?, error: Error?) -> Void in
             var response: Any? = nil
             if error == nil {
@@ -415,11 +407,6 @@ internal class WebServicesResponse: NSObject {
         var request = URLRequest(url: URL!)
         request.httpMethod = "PUT"
         
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.httpAdditionalHeaders = self.additionalHeaders()
-        sessionConfiguration.timeoutIntervalForRequest = self.timeoutInterval
-        
-        let session = URLSession(configuration: sessionConfiguration)
         uploadTask.pointee = session.uploadTask(with: request, from: data, completionHandler: { (data: Data?, URLResponse: Foundation.URLResponse?, error: Error?) -> Void in
             var response: Any? = nil
             if error == nil {
@@ -481,11 +468,6 @@ internal class WebServicesResponse: NSObject {
         request.httpMethod = "DELETE"
         request.httpBody = data
         
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.httpAdditionalHeaders = self.additionalHeaders()
-        sessionConfiguration.timeoutIntervalForRequest = self.timeoutInterval
-        
-        let session = URLSession(configuration: sessionConfiguration)
         dataTask.pointee = session.dataTask(with: request, completionHandler: { (data: Data?, URLResponse: Foundation.URLResponse?, error: Error?) -> Void in
             var response: Any? = nil
             if error == nil {

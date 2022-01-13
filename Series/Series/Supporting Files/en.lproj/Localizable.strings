@@ -17,3 +17,5 @@
 "SE_STORAGE_SAVE_ERROR" = "The save data process failed.";
 "SE_STORAGE_DELETE_ERROR" = "The data deletion failed.";
 "SE_STORAGE_FETCH_ERROR" = "The retrieving of data failed.";
+// MARK: - Show's list
+"SE_SHOW_LIST_ERROR_TITLE" = "Couldn't load shows";

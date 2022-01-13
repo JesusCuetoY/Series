@@ -12,7 +12,7 @@ import Foundation
  */
 struct SEShowDetailModel: Codable {
     /// Identificaton associated to the show.
-    let id: String
+    let id: Int
     /// Constant that represents name of the show.
     let name: String
     /// Constant that indicates the list of genres of a given show.
@@ -31,6 +31,16 @@ struct SEShowDetailModel: Codable {
         case schedule
         case summary
         case poster = "image"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: CodingKeys.id)
+        self.name = try container.decode(String.self, forKey: CodingKeys.name)
+        self.genres = try container.decode([String].self, forKey: CodingKeys.genres)
+        self.schedule = try container.decode(SEShowScheduleModel.self, forKey: CodingKeys.schedule)
+        self.summary = try container.decode(String.self, forKey: CodingKeys.summary)
+        self.poster = try container.decode(SEShowPosterModel.self, forKey: CodingKeys.poster)
     }
 }
 

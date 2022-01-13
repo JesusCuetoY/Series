@@ -64,6 +64,9 @@ class NetworkManager {
                 switch statusCode {
                 case 200 ..< 205:
                     //Success
+                    if modelToMap.self == Data.self {
+                        return (response.data ?? Data(), nil)
+                    }
                     let model = try JSONDecoder().decode(modelToMap!.self, from: response.data ?? Data())
                     return (model, nil)
                 case 400 ..< 405:
@@ -94,8 +97,8 @@ extension NetworkManager: NetworkManagerProtocol {
     func getRequest<T, U>(_ url: URL, returningClass: T.Type?, returningError: U.Type?, parameters: Any?, success: @escaping (T) -> Void, failure: @escaping (U) -> Void) where T : Decodable, T : Encodable, U : Decodable, U : Encodable {
         var dataTask: URLSessionDataTask?
         WebServicesManager.contentType = .Raw
-        WebServicesManager.getWithURL(url, parameters: parameters, dataTask: &dataTask) { [unowned self] (webServiceResponse) in
-            self.manage(response: webServiceResponse, returningClass: returningClass, returningError: returningError, success: success, failure: failure)
+        WebServicesManager.getWithURL(url, parameters: parameters, dataTask: &dataTask) { [weak self] (webServiceResponse) in
+            self?.manage(response: webServiceResponse, returningClass: returningClass, returningError: returningError, success: success, failure: failure)
         }
     }
     

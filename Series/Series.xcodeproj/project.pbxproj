@@ -45,6 +45,24 @@
 		19D7D5A5278F560E0086197C /* SEShowRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5A3278F560E0086197C /* SEShowRepositoryProtocol.swift */; };
 		19D7D5AA27905FC30086197C /* SEShowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5A927905FC30086197C /* SEShowRepository.swift */; };
 		19D7D5AB27905FC30086197C /* SEShowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5A927905FC30086197C /* SEShowRepository.swift */; };
+		19D7D5AD279097210086197C /* SEHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5AC279097210086197C /* SEHomePresenter.swift */; };
+		19D7D5AE279097210086197C /* SEHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5AC279097210086197C /* SEHomePresenter.swift */; };
+		19D7D5B02790972C0086197C /* SEHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5AF2790972C0086197C /* SEHomeRouter.swift */; };
+		19D7D5B12790972C0086197C /* SEHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5AF2790972C0086197C /* SEHomeRouter.swift */; };
+		19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5B2279097360086197C /* SEHomeConfigurator.swift */; };
+		19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5B2279097360086197C /* SEHomeConfigurator.swift */; };
+		19D7D5B82790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */; };
+		19D7D5B92790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */; };
+		19D7D6C42790D63A0086197C /* SEPosterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6C32790D63A0086197C /* SEPosterUseCase.swift */; };
+		19D7D6C52790D63A0086197C /* SEPosterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6C32790D63A0086197C /* SEPosterUseCase.swift */; };
+		19D7D6C82790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6C72790D7BE0086197C /* SEPosterRepositoryProtocol.swift */; };
+		19D7D6C92790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6C72790D7BE0086197C /* SEPosterRepositoryProtocol.swift */; };
+		19D7D6CC2790D9310086197C /* SEPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6CB2790D9310086197C /* SEPosterRepository.swift */; };
+		19D7D6CD2790D9310086197C /* SEPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6CB2790D9310086197C /* SEPosterRepository.swift */; };
+		19D7D6CF2790DAC60086197C /* SEShowCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */; };
+		19D7D6D02790DAC60086197C /* SEShowCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */; };
+		19D7D6D22790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */; };
+		19D7D6D32790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +112,15 @@
 		19D7D59F278F50E80086197C /* SEShowModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowModelData.swift; sourceTree = "<group>"; };
 		19D7D5A3278F560E0086197C /* SEShowRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19D7D5A927905FC30086197C /* SEShowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowRepository.swift; sourceTree = "<group>"; };
+		19D7D5AC279097210086197C /* SEHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEHomePresenter.swift; sourceTree = "<group>"; };
+		19D7D5AF2790972C0086197C /* SEHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEHomeRouter.swift; sourceTree = "<group>"; };
+		19D7D5B2279097360086197C /* SEHomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEHomeConfigurator.swift; sourceTree = "<group>"; };
+		19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowCollectionViewCell.swift; sourceTree = "<group>"; };
+		19D7D6C32790D63A0086197C /* SEPosterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPosterUseCase.swift; sourceTree = "<group>"; };
+		19D7D6C72790D7BE0086197C /* SEPosterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPosterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		19D7D6CB2790D9310086197C /* SEPosterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPosterRepository.swift; sourceTree = "<group>"; };
+		19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowCellPresenter.swift; sourceTree = "<group>"; };
+		19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowCellConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +258,7 @@
 		19D7D451278E92A70086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6CA2790D9220086197C /* Poster */,
 				19D7D5A827905FB60086197C /* Home */,
 			);
 			path = Repository;
@@ -263,6 +291,7 @@
 		19D7D455278E92CD0086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6C62790D7AE0086197C /* Poster */,
 				19D7D5A2278F55F70086197C /* Home */,
 			);
 			path = Repository;
@@ -279,6 +308,7 @@
 		19D7D457278E92D60086197C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6C22790D59C0086197C /* Poster */,
 				19D7D596278F4E4B0086197C /* Home */,
 			);
 			path = UseCase;
@@ -331,6 +361,7 @@
 		19D7D45D278E939E0086197C /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D5B52790A3B40086197C /* Cells */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -339,6 +370,9 @@
 			isa = PBXGroup;
 			children = (
 				19D7D420278E8C6C0086197C /* SEHomeViewController.swift */,
+				19D7D5AC279097210086197C /* SEHomePresenter.swift */,
+				19D7D5AF2790972C0086197C /* SEHomeRouter.swift */,
+				19D7D5B2279097360086197C /* SEHomeConfigurator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -400,6 +434,48 @@
 				19D7D5A927905FC30086197C /* SEShowRepository.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		19D7D5B52790A3B40086197C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D5B62790A3D40086197C /* CollectionCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		19D7D5B62790A3D40086197C /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */,
+				19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */,
+				19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		19D7D6C22790D59C0086197C /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6C32790D63A0086197C /* SEPosterUseCase.swift */,
+			);
+			path = Poster;
+			sourceTree = "<group>";
+		};
+		19D7D6C62790D7AE0086197C /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6C72790D7BE0086197C /* SEPosterRepositoryProtocol.swift */,
+			);
+			path = Poster;
+			sourceTree = "<group>";
+		};
+		19D7D6CA2790D9220086197C /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6CB2790D9310086197C /* SEPosterRepository.swift */,
+			);
+			path = Poster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,16 +642,25 @@
 				19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */,
 				19D7D477278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AA27905FC30086197C /* SEShowRepository.swift in Sources */,
+				19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59C278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				19D7D474278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47A278E9B290086197C /* NetworkConfiguration.swift in Sources */,
+				19D7D5B82790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
+				19D7D6D22790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
+				19D7D5AD279097210086197C /* SEHomePresenter.swift in Sources */,
+				19D7D6C82790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
+				19D7D5B02790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A0278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D591278F45FA0086197C /* SENavigationViewController.swift in Sources */,
 				19D7D594278F47B40086197C /* SEStylesApp.swift in Sources */,
 				19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */,
+				19D7D6CC2790D9310086197C /* SEPosterRepository.swift in Sources */,
 				19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */,
+				19D7D6C42790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D599278F4E620086197C /* SEShowModel.swift in Sources */,
+				19D7D6CF2790DAC60086197C /* SEShowCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,16 +689,25 @@
 				19D7D462278E97F60086197C /* SEHomeViewController.swift in Sources */,
 				19D7D478278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AB27905FC30086197C /* SEShowRepository.swift in Sources */,
+				19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59D278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				19D7D475278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47B278E9B290086197C /* NetworkConfiguration.swift in Sources */,
+				19D7D5B92790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
+				19D7D6D32790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
+				19D7D5AE279097210086197C /* SEHomePresenter.swift in Sources */,
+				19D7D6C92790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
+				19D7D5B12790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A1278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D592278F45FA0086197C /* SENavigationViewController.swift in Sources */,
 				19D7D595278F47B40086197C /* SEStylesApp.swift in Sources */,
 				19D7D463278E97F60086197C /* AppDelegate.swift in Sources */,
+				19D7D6CD2790D9310086197C /* SEPosterRepository.swift in Sources */,
 				19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */,
+				19D7D6C52790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D59A278F4E620086197C /* SEShowModel.swift in Sources */,
+				19D7D6D02790DAC60086197C /* SEShowCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

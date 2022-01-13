@@ -38,13 +38,13 @@ class SEShowInteractor {
     }
     
     private func makeShowsData(from info: [SEShowDetailModel], completion: @escaping([SEShowModel]) -> Void) {
-        completion(info.map { SEShowModel(name: $0.name, poster: $0.poster.medium) })
+        completion(info.map { SEShowModel(id: "\($0.id)", name: $0.name, poster: $0.poster.medium) })
     }
 }
 // MARK: - SEShowUseCase's implementation
 extension SEShowInteractor: SEShowUseCase {
     func getShows(byPage page: String, success: @escaping ([SEShowModel]) -> Void, failure: @escaping (SEError) -> Void) {
-        self.repository.getFilteredShows(from: page, success: { [unowned self] shows in
+        self.repository.getShowList(byPage: page, success: { [unowned self] shows in
             self.makeShowsData(from: shows, completion: success)
         }, failure: failure)
     }
