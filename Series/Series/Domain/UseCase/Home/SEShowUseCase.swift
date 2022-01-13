@@ -38,7 +38,11 @@ class SEShowInteractor {
     }
     
     private func makeShowsData(from info: [SEShowDetailModel], completion: @escaping([SEShowModel]) -> Void) {
-        completion(info.map { SEShowModel(id: "\($0.id)", name: $0.name, poster: $0.poster.medium) })
+        completion(info.map { SEShowModel(id: "\($0.id)", name: $0.name, poster: $0.poster?.medium ?? SEKeys.MessageKeys.emptyText) })
+    }
+    
+    private func makeShowsSearchData(from info: [SEShowSearchDetailModel], completion: @escaping([SEShowModel]) -> Void) {
+        completion(info.map { SEShowModel(id: "\($0.show.id)", name: $0.show.name, poster: $0.show.poster?.medium ?? SEKeys.MessageKeys.emptyText) })
     }
 }
 // MARK: - SEShowUseCase's implementation
@@ -51,7 +55,7 @@ extension SEShowInteractor: SEShowUseCase {
     
     func getFilteredShows(from id: String, success: @escaping ([SEShowModel]) -> Void, failure: @escaping (SEError) -> Void) {
         self.repository.getFilteredShows(from: id, success: { [unowned self] shows in
-            self.makeShowsData(from: shows, completion: success)
+            self.makeShowsSearchData(from: shows, completion: success)
         }, failure: failure)
     }
 }

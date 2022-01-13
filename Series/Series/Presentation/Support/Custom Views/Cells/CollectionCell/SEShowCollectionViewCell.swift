@@ -24,7 +24,7 @@ class SEShowCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -72,7 +72,7 @@ class SEShowCollectionViewCell: UICollectionViewCell {
                                      self.showNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0),
                                      self.showNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0),
                                      self.showNameLabel.heightAnchor.constraint(equalToConstant: self.bounds.height / 4.0)])
-        SEStylesApp.personalizeLabelMedium(self.showNameLabel, withSizeFont: 12.0)
+        SEStylesApp.personalizeLabelBold(self.showNameLabel, withSizeFont: 12.0)
     }
     
     func setupCell(from show: SEShowModel) {

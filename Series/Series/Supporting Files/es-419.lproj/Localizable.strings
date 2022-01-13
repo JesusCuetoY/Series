@@ -19,3 +19,4 @@
 "SE_STORAGE_FETCH_ERROR" = "Falló la obtención de datos.";
 // MARK: - Show's list
 "SE_SHOW_LIST_ERROR_TITLE" = "Error al cargar series";
+"SE_SHOW_LIST_SEARCH_PLACEHOLDER" = "Buscar";

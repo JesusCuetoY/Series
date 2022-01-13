@@ -25,6 +25,8 @@ class SEHomeRouter {
     private func getAlert(title: String?, message: String?) -> UIAlertController {
         let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.view.tintColor = SEStylesApp.Color.SE_PrimaryColor
+        let doneAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(doneAction)
         return alertController
     }
 }

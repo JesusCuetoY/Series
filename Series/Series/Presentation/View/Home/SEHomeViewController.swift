@@ -29,6 +29,16 @@ class SEHomeViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+    private lazy var searchBar: UISearchController = {
+        let bar = UISearchController(searchResultsController: nil)
+        bar.searchBar.tintColor = SEStylesApp.Color.SE_PrimaryColor
+        bar.searchBar.placeholder = NSLocalizedString(SEKeys.MessageKeys.listSearchPlaceholder, comment: SEKeys.MessageKeys.emptyText)
+        bar.searchResultsUpdater = self
+        bar.delegate = self
+        bar.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        return bar
+    }()
     // MARK: - Properties
     private lazy var configurator: SEHomeConfigurator = { return SEHomeConfigurator(from: self) }()
     private lazy var presenter: SEHomePresenterInput = { return self.configurator.configure() }()
@@ -42,14 +52,15 @@ class SEHomeViewController: UIViewController {
         self.initView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: SEStylesApp.Color.SE_TextColor ?? .white]
-    }
-    
     private func initView() {
         self.title = SEHomeViewController.controllerName
+        self.navigationItem.searchController = self.searchBar
         self.view.backgroundColor = SEStylesApp.Color.SE_SecondaryColor
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = SEStylesApp.Color.SE_PrimaryColor
+        self.navigationController?.navigationBar.standardAppearance = navBarAppearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         self.view.addSubview(self.showCollectionView)
         NSLayoutConstraint.activate([self.showCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                                      self.showCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
@@ -84,5 +95,16 @@ extension SEHomeViewController: UICollectionViewDataSource {
         }
         cell.setupCell(from: self.presenter.getShow(from: indexPath))
         return cell
+    }
+}
+
+// MARK: - UISearchResultsUpdating's method
+extension SEHomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        self.presenter.searchShow(byId: searchController.searchBar.searchTextField.text ?? SEKeys.MessageKeys.emptyText)
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.presenter.searchShow(byId: SEKeys.MessageKeys.emptyText)
     }
 }

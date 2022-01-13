@@ -41,6 +41,7 @@ internal struct SEKeys {
         static let networkParserErrorTitle = "SE_PARSER_ERROR_TITLE"
         // Series List
         static let listErrorTitle = "SE_SHOW_LIST_ERROR_TITLE"
+        static let listSearchPlaceholder = "SE_SHOW_LIST_SEARCH_PLACEHOLDER"
         // Series Detail
         // Episodes
         // Episodes Detail

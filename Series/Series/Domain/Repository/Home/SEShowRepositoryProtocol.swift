@@ -20,8 +20,8 @@ protocol SEShowRepositoryProtocol: AnyObject {
     /**
      Method that returns all available shows that fullfill the required id
      - Parameter id: Identification key of type `String`.
-     - Parameter success: Closure that returns an array of type `SEShowDetailModel` based on the results obtained. Default value is empty.
+     - Parameter success: Closure that returns an array of type `SEShowSearchDetailModel` based on the results obtained. Default value is empty.
      - Parameter failure: Closure that indicates failure state and containts an expected value of `SEError`.
      */
-    func getFilteredShows(from id: String, success: @escaping([SEShowDetailModel]) -> Void, failure: @escaping(SEError) -> Void)
+    func getFilteredShows(from id: String, success: @escaping([SEShowSearchDetailModel]) -> Void, failure: @escaping(SEError) -> Void)
 }

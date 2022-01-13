@@ -31,8 +31,8 @@ extension SEShowRepository: SEShowRepositoryProtocol {
         self.request?.getRequest(url, returningClass: [SEShowDetailModel].self, returningError: SEError.self, parameters: [SEShowRepository.showPageKey: page], success: success, failure: failure)
     }
     
-    func getFilteredShows(from id: String, success: @escaping ([SEShowDetailModel]) -> Void, failure: @escaping (SEError) -> Void) {
+    func getFilteredShows(from id: String, success: @escaping ([SEShowSearchDetailModel]) -> Void, failure: @escaping (SEError) -> Void) {
         let url = URL(string: SEKeys.ApiKeys.AppEnvironment.configuration.serverURL + SEKeys.ApiKeys.showSearchURL)!
-        self.request?.getRequest(url, returningClass: [SEShowDetailModel].self, returningError: SEError.self, parameters: [SEShowRepository.showSearchKey: id], success: success, failure: failure)
+        self.request?.getRequest(url, returningClass: [SEShowSearchDetailModel].self, returningError: SEError.self, parameters: [SEShowRepository.showSearchKey: id], success: success, failure: failure)
     }
 }

@@ -26,9 +26,13 @@ class SEShowCellPresenter {
 
 extension SEShowCellPresenter: SEShowCellPresenterInput {
     func getPoster() {
-        self.interactor.getPoster(fromPath: self.showModel?.poster ?? SEKeys.MessageKeys.emptyText) { [unowned self] imgData in
-            self.output?.didRetrievePoster(imageData: imgData, name: self.showModel?.name ?? SEKeys.MessageKeys.emptyText)
-        } failure: { [unowned self] _ in
+        if let imagePath = self.showModel?.poster, imagePath != SEKeys.MessageKeys.emptyText {
+            self.interactor.getPoster(fromPath: self.showModel?.poster ?? SEKeys.MessageKeys.emptyText) { [unowned self] imgData in
+                self.output?.didRetrievePoster(imageData: imgData, name: self.showModel?.name ?? SEKeys.MessageKeys.emptyText)
+            } failure: { [unowned self] _ in
+                self.output?.didRetrievePoster(imageData: nil, name: self.showModel?.name ?? SEKeys.MessageKeys.emptyText)
+            }
+        } else {
             self.output?.didRetrievePoster(imageData: nil, name: self.showModel?.name ?? SEKeys.MessageKeys.emptyText)
         }
     }

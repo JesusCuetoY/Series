@@ -50,6 +50,11 @@ extension SEHomePresenter: SEHomePresenterInput {
     }
     
     func searchShow(byId id: String) {
+        if id == SEKeys.MessageKeys.emptyText {
+            self.showAuxList = self.showList
+            self.output?.didRetrieveData()
+            return
+        }
         self.interactor.getFilteredShows(from: id) { [unowned self] showList in
             self.showAuxList = showList
             self.output?.didRetrieveData()
