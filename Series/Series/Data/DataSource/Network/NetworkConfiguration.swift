@@ -28,13 +28,13 @@ internal protocol Configuration {
 }
 
 struct ProductionConfig: Configuration {
-   static let serverURL = "http://192.168.1.7:3000"
+   static let serverURL = "https://api.tvmaze.com/"
 }
 
 struct DevelopConfig: Configuration {
-   static let serverURL = "http://192.168.1.7:3000"
+   static let serverURL = "https://api.tvmaze.com/"
 }
 
 struct UATConfig: Configuration {
-   static let serverURL   = "http://192.168.1.7:3000"
+   static let serverURL   = "https://api.tvmaze.com/"
 }

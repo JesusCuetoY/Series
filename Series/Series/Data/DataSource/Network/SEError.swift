@@ -10,5 +10,5 @@ import Foundation
 struct SEError: Codable {
     var code: Int?
     var message: String?
-    var messageDetail: String?
+    var name: String?
 }

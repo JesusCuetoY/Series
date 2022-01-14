@@ -21,6 +21,8 @@ internal struct SEKeys {
         }()
         
         // MARK: - Series's URLs
+        static let showListURL = "shows"
+        static let showSearchURL = "search/shows"
     }
 
     // MARK: - Message keys
@@ -38,6 +40,9 @@ internal struct SEKeys {
         static let networkParserErrorMessage = "SE_PARSER_ERROR_MESSAGE"
         static let networkParserErrorTitle = "SE_PARSER_ERROR_TITLE"
         // Series List
+        static let listErrorTitle = "SE_SHOW_LIST_ERROR_TITLE"
+        static let listSearchPlaceholder = "SE_SHOW_LIST_SEARCH_PLACEHOLDER"
+        static let listSearchEmptyErrorMessage = "SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE"
         // Series Detail
         // Episodes
         // Episodes Detail
