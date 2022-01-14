@@ -63,6 +63,14 @@
 		19D7D6D02790DAC60086197C /* SEShowCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */; };
 		19D7D6D22790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */; };
 		19D7D6D32790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */; };
+		19D7D6D627914C460086197C /* SEShowDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D527914C460086197C /* SEShowDetailUseCase.swift */; };
+		19D7D6D727914C460086197C /* SEShowDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D527914C460086197C /* SEShowDetailUseCase.swift */; };
+		19D7D6DA27914C5D0086197C /* SEShowDetailRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D927914C5D0086197C /* SEShowDetailRepositoryProtocol.swift */; };
+		19D7D6DB27914C5D0086197C /* SEShowDetailRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6D927914C5D0086197C /* SEShowDetailRepositoryProtocol.swift */; };
+		19D7D6DE279158780086197C /* SEShowDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6DD279158780086197C /* SEShowDetailModel.swift */; };
+		19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6DD279158780086197C /* SEShowDetailModel.swift */; };
+		19D7D6E227915AEB0086197C /* SEShowDetailModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */; };
+		19D7D6E327915AEB0086197C /* SEShowDetailModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +129,10 @@
 		19D7D6CB2790D9310086197C /* SEPosterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPosterRepository.swift; sourceTree = "<group>"; };
 		19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowCellPresenter.swift; sourceTree = "<group>"; };
 		19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowCellConfigurator.swift; sourceTree = "<group>"; };
+		19D7D6D527914C460086197C /* SEShowDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailUseCase.swift; sourceTree = "<group>"; };
+		19D7D6D927914C5D0086197C /* SEShowDetailRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailRepositoryProtocol.swift; sourceTree = "<group>"; };
+		19D7D6DD279158780086197C /* SEShowDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailModel.swift; sourceTree = "<group>"; };
+		19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +279,7 @@
 		19D7D452278E92B20086197C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6E027915ACF0086197C /* ShowDetail */,
 				19D7D59E278F50CC0086197C /* Home */,
 			);
 			path = Model;
@@ -291,6 +304,7 @@
 		19D7D455278E92CD0086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6D827914C4D0086197C /* ShowDetail */,
 				19D7D6C62790D7AE0086197C /* Poster */,
 				19D7D5A2278F55F70086197C /* Home */,
 			);
@@ -300,6 +314,7 @@
 		19D7D456278E92D20086197C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6DC279158620086197C /* ShowDetail */,
 				19D7D597278F4E500086197C /* Home */,
 			);
 			path = Model;
@@ -308,6 +323,7 @@
 		19D7D457278E92D60086197C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6D427914C2A0086197C /* ShowDetail */,
 				19D7D6C22790D59C0086197C /* Poster */,
 				19D7D596278F4E4B0086197C /* Home */,
 			);
@@ -478,6 +494,38 @@
 			path = Poster;
 			sourceTree = "<group>";
 		};
+		19D7D6D427914C2A0086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6D527914C460086197C /* SEShowDetailUseCase.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		19D7D6D827914C4D0086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6D927914C5D0086197C /* SEShowDetailRepositoryProtocol.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		19D7D6DC279158620086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6DD279158780086197C /* SEShowDetailModel.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		19D7D6E027915ACF0086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,7 +690,9 @@
 				19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */,
 				19D7D477278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AA27905FC30086197C /* SEShowRepository.swift in Sources */,
+				19D7D6E227915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
 				19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */,
+				19D7D6DE279158780086197C /* SEShowDetailModel.swift in Sources */,
 				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59C278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				19D7D474278E9A970086197C /* NetworkManager.swift in Sources */,
@@ -660,6 +710,8 @@
 				19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C42790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D599278F4E620086197C /* SEShowModel.swift in Sources */,
+				19D7D6DA27914C5D0086197C /* SEShowDetailRepositoryProtocol.swift in Sources */,
+				19D7D6D627914C460086197C /* SEShowDetailUseCase.swift in Sources */,
 				19D7D6CF2790DAC60086197C /* SEShowCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,7 +741,9 @@
 				19D7D462278E97F60086197C /* SEHomeViewController.swift in Sources */,
 				19D7D478278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AB27905FC30086197C /* SEShowRepository.swift in Sources */,
+				19D7D6E327915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
 				19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */,
+				19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */,
 				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59D278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				19D7D475278E9A970086197C /* NetworkManager.swift in Sources */,
@@ -707,6 +761,8 @@
 				19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C52790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D59A278F4E620086197C /* SEShowModel.swift in Sources */,
+				19D7D6DB27914C5D0086197C /* SEShowDetailRepositoryProtocol.swift in Sources */,
+				19D7D6D727914C460086197C /* SEShowDetailUseCase.swift in Sources */,
 				19D7D6D02790DAC60086197C /* SEShowCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
