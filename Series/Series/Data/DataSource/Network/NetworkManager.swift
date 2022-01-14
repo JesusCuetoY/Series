@@ -53,11 +53,11 @@ class NetworkManager {
     @inline(__always) private func validateResponse<T, U>(response: WebServicesResponse, modelToMap: T.Type?, errorToMap: U.Type?) -> (Any?, Any?) where T: Codable, U: Codable {
         switch response.state {
         case .timeout:
-            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkTimeOutError, comment: SEKeys.MessageKeys.emptyText), messageDetail: NSLocalizedString(SEKeys.MessageKeys.networkTimeOutError, comment: SEKeys.MessageKeys.emptyText)))
+            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkTimeOutError, comment: SEKeys.MessageKeys.emptyText), name: NSLocalizedString(SEKeys.MessageKeys.networkTimeOutError, comment: SEKeys.MessageKeys.emptyText)))
         case .offline:
-            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkOfflineError, comment: SEKeys.MessageKeys.emptyText), messageDetail: NSLocalizedString(SEKeys.MessageKeys.networkOfflineError, comment: SEKeys.MessageKeys.emptyText)))
+            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkOfflineError, comment: SEKeys.MessageKeys.emptyText), name: NSLocalizedString(SEKeys.MessageKeys.networkOfflineError, comment: SEKeys.MessageKeys.emptyText)))
         case .server, .canceled, .failure, .tokenBlacklisted:
-            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkServerError, comment: SEKeys.MessageKeys.emptyText), messageDetail: NSLocalizedString(SEKeys.MessageKeys.networkServerError, comment: SEKeys.MessageKeys.emptyText)))
+            return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkServerError, comment: SEKeys.MessageKeys.emptyText), name: NSLocalizedString(SEKeys.MessageKeys.networkServerError, comment: SEKeys.MessageKeys.emptyText)))
         case .success:
             do {
                 let statusCode = response.statusCode
@@ -74,10 +74,10 @@ class NetworkManager {
                     let error = try JSONDecoder().decode(errorToMap!.self, from: response.data ?? Data())
                     return (nil, error)
                 default:
-                    return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkParserErrorTitle, comment: SEKeys.MessageKeys.emptyText), messageDetail: response.message ?? NSLocalizedString(SEKeys.MessageKeys.networkParserErrorMessage, comment: SEKeys.MessageKeys.emptyText)))
+                    return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkParserErrorTitle, comment: SEKeys.MessageKeys.emptyText), name: response.message ?? NSLocalizedString(SEKeys.MessageKeys.networkParserErrorMessage, comment: SEKeys.MessageKeys.emptyText)))
                 }
             } catch {
-                return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkParserErrorTitle, comment: SEKeys.MessageKeys.emptyText), messageDetail: response.message ?? NSLocalizedString(SEKeys.MessageKeys.networkParserErrorMessage, comment: SEKeys.MessageKeys.emptyText)))
+                return (nil, SEError(code: 11, message: NSLocalizedString(SEKeys.MessageKeys.networkParserErrorTitle, comment: SEKeys.MessageKeys.emptyText), name: response.message ?? NSLocalizedString(SEKeys.MessageKeys.networkParserErrorMessage, comment: SEKeys.MessageKeys.emptyText)))
             }
         }
     }

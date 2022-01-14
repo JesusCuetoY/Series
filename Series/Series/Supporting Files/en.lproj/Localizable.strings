@@ -20,3 +20,4 @@
 // MARK: - Show's list
 "SE_SHOW_LIST_ERROR_TITLE" = "Couldn't load shows";
 "SE_SHOW_LIST_SEARCH_PLACEHOLDER" = "Search";
+"SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE" = "No results for '%@'";

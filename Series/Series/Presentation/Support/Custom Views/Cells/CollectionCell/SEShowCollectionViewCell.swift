@@ -57,6 +57,7 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         self.configurator = nil
         self.presenter = nil
         self.posterImageView.image = nil
+        self.posterImageView.backgroundColor = .clear
         self.showNameLabel.text = SEKeys.MessageKeys.emptyText
     }
     
@@ -79,6 +80,10 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         self.configurator = SEShowCellConfigurator(from: self, showInfo: show)
         self.presenter = configurator?.configure()
         self.presenter?.getPoster()
+    }
+    
+    func setupShimmerCell() {
+        self.posterImageView.backgroundColor = .darkGray
     }
 }
 

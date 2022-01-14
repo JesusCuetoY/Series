@@ -12,6 +12,8 @@ protocol SEHomeRouterInput: AnyObject {
     func routeToActivity()
     func routeToStopActivity()
     func routeToError(model: SEError?)
+    func routeToEmptyResultError(message: String)
+    func routeToHideError()
 }
 
 class SEHomeRouter {
@@ -46,5 +48,16 @@ extension SEHomeRouter: SEHomeRouterInput {
     
     func routeToError(model: SEError?) {
         self.viewController.present(self.getAlert(title: NSLocalizedString(SEKeys.MessageKeys.listErrorTitle, comment: SEKeys.MessageKeys.emptyText), message: model?.message), animated: true, completion: nil)
+    }
+    
+    func routeToEmptyResultError(message: String) {
+        self.viewController.searchResultErrorLabel.text = message
+        self.viewController.showCollectionView.isHidden = true
+        self.viewController.searchResultErrorLabel.isHidden = false
+    }
+    
+    func routeToHideError() {
+        self.viewController.searchResultErrorLabel.isHidden = true
+        self.viewController.showCollectionView.isHidden = false
     }
 }

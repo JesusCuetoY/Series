@@ -14,7 +14,7 @@ protocol SEHomeView: AnyObject {
 class SEHomeViewController: UIViewController {
     
     // MARK: - Views
-    private lazy var showCollectionView: UICollectionView = {
+    internal lazy var showCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 20.0, right: 0.0)
         layout.minimumInteritemSpacing = 0.0
@@ -28,6 +28,14 @@ class SEHomeViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
+    }()
+    internal lazy var searchResultErrorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = SEStylesApp.Color.SE_TextColor?.withAlphaComponent(0.5)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     private lazy var searchBar: UISearchController = {
         let bar = UISearchController(searchResultsController: nil)
@@ -66,6 +74,11 @@ class SEHomeViewController: UIViewController {
                                      self.showCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
                                      self.showCollectionView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
                                      self.showCollectionView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor)])
+        self.view.addSubview(self.searchResultErrorLabel)
+        NSLayoutConstraint.activate([self.searchResultErrorLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                                     self.searchResultErrorLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                                     self.searchResultErrorLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.8)])
+        self.searchResultErrorLabel.isHidden = true
         self.presenter.getShowList()
     }
 }
@@ -85,16 +98,37 @@ extension SEHomeViewController: UICollectionViewDelegate {
 }
 // MARK: - UICollectionViewDatasource's methods
 extension SEHomeViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.presenter.numberOfSections
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presenter.showListCount
+        switch section {
+        case 0:
+            return self.presenter.showListCount
+        case 1:
+            return self.presenter.shimmerListCount
+        default:
+            return self.presenter.showListCount
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SEHomeViewController.collectionCellIdentifier, for: indexPath) as? SEShowCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(from: self.presenter.getShow(from: indexPath))
+        switch indexPath.section {
+        case 0: cell.setupCell(from: self.presenter.getShow(from: indexPath))
+        case 1: cell.setupShimmerCell()
+        default: cell.setupCell(from: self.presenter.getShow(from: indexPath))
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == self.presenter.shimmerListCount - 1 && indexPath.section == 1 && !self.searchBar.searchBar.searchTextField.isFirstResponder {
+            self.presenter.getShowList()
+        }
     }
 }
 

@@ -55,6 +55,11 @@ extension SEShowInteractor: SEShowUseCase {
     
     func getFilteredShows(from id: String, success: @escaping ([SEShowModel]) -> Void, failure: @escaping (SEError) -> Void) {
         self.repository.getFilteredShows(from: id, success: { [unowned self] shows in
+            if shows.isEmpty {
+                // Means that there is no result from the given ID
+                failure(SEError(code: 10001, message: NSLocalizedString(SEKeys.MessageKeys.listSearchEmptyErrorMessage, comment: SEKeys.MessageKeys.emptyText).replacingOccurrences(of: "%@", with: id), name: SEKeys.MessageKeys.emptyText))
+                return
+            }
             self.makeShowsSearchData(from: shows, completion: success)
         }, failure: failure)
     }

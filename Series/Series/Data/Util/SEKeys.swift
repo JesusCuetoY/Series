@@ -42,6 +42,7 @@ internal struct SEKeys {
         // Series List
         static let listErrorTitle = "SE_SHOW_LIST_ERROR_TITLE"
         static let listSearchPlaceholder = "SE_SHOW_LIST_SEARCH_PLACEHOLDER"
+        static let listSearchEmptyErrorMessage = "SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE"
         // Series Detail
         // Episodes
         // Episodes Detail
