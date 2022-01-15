@@ -14,6 +14,14 @@
 		1999A7322792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */; };
 		1999A7332792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */; };
 		1999A73527925243009E5DDA /* SEDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73427925243009E5DDA /* SEDetailTests.swift */; };
+		1999A73827928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73727928B07009E5DDA /* SEEpisodeDetailViewController.swift */; };
+		1999A73927928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73727928B07009E5DDA /* SEEpisodeDetailViewController.swift */; };
+		1999A73B27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73A27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift */; };
+		1999A73C27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73A27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift */; };
+		1999A73E27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73D27928B19009E5DDA /* SEEpisodeDetailRouter.swift */; };
+		1999A73F27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A73D27928B19009E5DDA /* SEEpisodeDetailRouter.swift */; };
+		1999A74127928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74027928B26009E5DDA /* SEEpisodeDetailConfigurator.swift */; };
+		1999A74227928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74027928B26009E5DDA /* SEEpisodeDetailConfigurator.swift */; };
 		19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41C278E8C6C0086197C /* AppDelegate.swift */; };
 		19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41E278E8C6C0086197C /* SceneDelegate.swift */; };
 		19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D420278E8C6C0086197C /* SEHomeViewController.swift */; };
@@ -112,6 +120,10 @@
 		1999A729279224AA009E5DDA /* SESeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SESeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SESeasonsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1999A73427925243009E5DDA /* SEDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEDetailTests.swift; sourceTree = "<group>"; };
+		1999A73727928B07009E5DDA /* SEEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		1999A73A27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEpisodeDetailPresenter.swift; sourceTree = "<group>"; };
+		1999A73D27928B19009E5DDA /* SEEpisodeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEpisodeDetailRouter.swift; sourceTree = "<group>"; };
+		1999A74027928B26009E5DDA /* SEEpisodeDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEpisodeDetailConfigurator.swift; sourceTree = "<group>"; };
 		19D7D419278E8C6C0086197C /* Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Series.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D7D41C278E8C6C0086197C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D7D41E278E8C6C0086197C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +237,17 @@
 				1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */,
 			);
 			path = SupplementaryView;
+			sourceTree = "<group>";
+		};
+		1999A73627928AE3009E5DDA /* EpisodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1999A73727928B07009E5DDA /* SEEpisodeDetailViewController.swift */,
+				1999A73A27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift */,
+				1999A73D27928B19009E5DDA /* SEEpisodeDetailRouter.swift */,
+				1999A74027928B26009E5DDA /* SEEpisodeDetailConfigurator.swift */,
+			);
+			path = EpisodeDetail;
 			sourceTree = "<group>";
 		};
 		19D7D410278E8C6C0086197C = {
@@ -415,6 +438,7 @@
 		19D7D45A278E93090086197C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1999A73627928AE3009E5DDA /* EpisodeDetail */,
 				19D7D6E8279160C40086197C /* ShowDetail */,
 				19D7D58F278F45C40086197C /* Navigation */,
 				19D7D45E278E943D0086197C /* Home */,
@@ -779,6 +803,7 @@
 				1999A7252791F38B009E5DDA /* SEInfoView.swift in Sources */,
 				19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DE279158780086197C /* SEShowDetailModel.swift in Sources */,
+				1999A73827928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */,
 				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59C278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				1999A72A279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
@@ -792,12 +817,15 @@
 				19D7D5B02790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A0278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D591278F45FA0086197C /* SENavigationViewController.swift in Sources */,
+				1999A73B27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */,
 				19D7D594278F47B40086197C /* SEStylesApp.swift in Sources */,
 				1999A7322792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
 				19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */,
 				19D7D6ED279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				19D7D6CC2790D9310086197C /* SEPosterRepository.swift in Sources */,
 				19D7D6E627915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
+				1999A73E27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */,
+				1999A74127928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */,
 				19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C42790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D599278F4E620086197C /* SEShowModel.swift in Sources */,
@@ -839,6 +867,7 @@
 				1999A7262791F38B009E5DDA /* SEInfoView.swift in Sources */,
 				19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */,
+				1999A73927928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */,
 				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59D278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				1999A72B279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
@@ -852,12 +881,15 @@
 				19D7D5B12790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A1278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D592278F45FA0086197C /* SENavigationViewController.swift in Sources */,
+				1999A73C27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */,
 				19D7D595278F47B40086197C /* SEStylesApp.swift in Sources */,
 				1999A7332792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
 				19D7D463278E97F60086197C /* AppDelegate.swift in Sources */,
 				19D7D6EE279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				19D7D6CD2790D9310086197C /* SEPosterRepository.swift in Sources */,
 				19D7D6E727915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
+				1999A73F27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */,
+				1999A74227928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */,
 				19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C52790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D59A278F4E620086197C /* SEShowModel.swift in Sources */,
