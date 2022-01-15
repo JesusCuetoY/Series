@@ -10,20 +10,20 @@ import Foundation
 /**
  Data type that represents the cell initial information of the episode.
  */
-struct SEShowEpisodeCellData: Codable {
+struct SEShowEpisodeCellData: SEDisplayModel {
     /// Episode identifier
     let id: String
     /// Episode number
     let number: String
     /// Episode name
-    let name: String
+    var name: String
     /// Episode medium image path
-    let imagePath: String
+    var poster: String
     
     init(fromId id: String, number: String, name: String, imagePath: String) {
         self.id = id
         self.number = number
         self.name = name
-        self.imagePath = imagePath
+        self.poster = imagePath
     }
 }

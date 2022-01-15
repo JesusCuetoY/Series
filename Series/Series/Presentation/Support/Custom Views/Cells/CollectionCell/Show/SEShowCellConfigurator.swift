@@ -13,9 +13,9 @@ import Foundation
 class SEShowCellConfigurator {
     // MARK: - Properties
     private unowned var view: SEShowCollectionViewCell
-    private var showInfo: SEShowModel
+    private var showInfo: SEDisplayModel
     
-    init(from view: SEShowCollectionViewCell, showInfo: SEShowModel) {
+    init(from view: SEShowCollectionViewCell, showInfo: SEDisplayModel) {
         self.view = view
         self.showInfo = showInfo
     }

@@ -76,7 +76,7 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         SEStylesApp.personalizeLabelBold(self.showNameLabel, withSizeFont: 12.0)
     }
     
-    func setupCell(from show: SEShowModel) {
+    func setupCell(from show: SEDisplayModel) {
         self.configurator = SEShowCellConfigurator(from: self, showInfo: show)
         self.presenter = configurator?.configure()
         self.presenter?.getPoster()

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1999A7252791F38B009E5DDA /* SEInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7242791F38B009E5DDA /* SEInfoView.swift */; };
+		1999A7262791F38B009E5DDA /* SEInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7242791F38B009E5DDA /* SEInfoView.swift */; };
+		1999A72A279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A729279224AA009E5DDA /* SESeasonCollectionViewCell.swift */; };
+		1999A72B279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A729279224AA009E5DDA /* SESeasonCollectionViewCell.swift */; };
+		1999A7322792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */; };
+		1999A7332792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */; };
 		19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41C278E8C6C0086197C /* AppDelegate.swift */; };
 		19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41E278E8C6C0086197C /* SceneDelegate.swift */; };
 		19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D420278E8C6C0086197C /* SEHomeViewController.swift */; };
@@ -71,6 +77,16 @@
 		19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6DD279158780086197C /* SEShowDetailModel.swift */; };
 		19D7D6E227915AEB0086197C /* SEShowDetailModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */; };
 		19D7D6E327915AEB0086197C /* SEShowDetailModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */; };
+		19D7D6E627915D9E0086197C /* SEShowDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E527915D9D0086197C /* SEShowDetailRepository.swift */; };
+		19D7D6E727915D9E0086197C /* SEShowDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E527915D9D0086197C /* SEShowDetailRepository.swift */; };
+		19D7D6EA279160E90086197C /* SEShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E9279160E90086197C /* SEShowDetailViewController.swift */; };
+		19D7D6EB279160E90086197C /* SEShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6E9279160E90086197C /* SEShowDetailViewController.swift */; };
+		19D7D6ED279160F30086197C /* SEShowDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6EC279160F30086197C /* SEShowDetailPresenter.swift */; };
+		19D7D6EE279160F30086197C /* SEShowDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6EC279160F30086197C /* SEShowDetailPresenter.swift */; };
+		19D7D6F0279160FB0086197C /* SEShowDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6EF279160FB0086197C /* SEShowDetailRouter.swift */; };
+		19D7D6F1279160FB0086197C /* SEShowDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6EF279160FB0086197C /* SEShowDetailRouter.swift */; };
+		19D7D6F3279161040086197C /* SEShowDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6F2279161040086197C /* SEShowDetailConfigurator.swift */; };
+		19D7D6F4279161040086197C /* SEShowDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D6F2279161040086197C /* SEShowDetailConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +107,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1999A7242791F38B009E5DDA /* SEInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEInfoView.swift; sourceTree = "<group>"; };
+		1999A729279224AA009E5DDA /* SESeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SESeasonCollectionViewCell.swift; sourceTree = "<group>"; };
+		1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SESeasonsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		19D7D419278E8C6C0086197C /* Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Series.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D7D41C278E8C6C0086197C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D7D41E278E8C6C0086197C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +152,11 @@
 		19D7D6D927914C5D0086197C /* SEShowDetailRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19D7D6DD279158780086197C /* SEShowDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailModel.swift; sourceTree = "<group>"; };
 		19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailModelData.swift; sourceTree = "<group>"; };
+		19D7D6E527915D9D0086197C /* SEShowDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailRepository.swift; sourceTree = "<group>"; };
+		19D7D6E9279160E90086197C /* SEShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailViewController.swift; sourceTree = "<group>"; };
+		19D7D6EC279160F30086197C /* SEShowDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailPresenter.swift; sourceTree = "<group>"; };
+		19D7D6EF279160FB0086197C /* SEShowDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailRouter.swift; sourceTree = "<group>"; };
+		19D7D6F2279161040086197C /* SEShowDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEShowDetailConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +191,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1999A7232791F372009E5DDA /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				1999A7242791F38B009E5DDA /* SEInfoView.swift */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
+		1999A7272792246A009E5DDA /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */,
+				19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */,
+				19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		1999A72827922475009E5DDA /* Season */ = {
+			isa = PBXGroup;
+			children = (
+				1999A729279224AA009E5DDA /* SESeasonCollectionViewCell.swift */,
+			);
+			path = Season;
+			sourceTree = "<group>";
+		};
+		1999A730279241E3009E5DDA /* SupplementaryView */ = {
+			isa = PBXGroup;
+			children = (
+				1999A7312792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift */,
+			);
+			path = SupplementaryView;
+			sourceTree = "<group>";
+		};
 		19D7D410278E8C6C0086197C = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +328,7 @@
 		19D7D451278E92A70086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6E427915D500086197C /* ShowDetail */,
 				19D7D6CA2790D9220086197C /* Poster */,
 				19D7D5A827905FB60086197C /* Home */,
 			);
@@ -353,6 +412,7 @@
 		19D7D45A278E93090086197C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				19D7D6E8279160C40086197C /* ShowDetail */,
 				19D7D58F278F45C40086197C /* Navigation */,
 				19D7D45E278E943D0086197C /* Home */,
 			);
@@ -377,6 +437,7 @@
 		19D7D45D278E939E0086197C /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				1999A7232791F372009E5DDA /* InfoView */,
 				19D7D5B52790A3B40086197C /* Cells */,
 			);
 			path = "Custom Views";
@@ -455,6 +516,7 @@
 		19D7D5B52790A3B40086197C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1999A730279241E3009E5DDA /* SupplementaryView */,
 				19D7D5B62790A3D40086197C /* CollectionCell */,
 			);
 			path = Cells;
@@ -463,9 +525,8 @@
 		19D7D5B62790A3D40086197C /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				19D7D5B72790A3F90086197C /* SEShowCollectionViewCell.swift */,
-				19D7D6CE2790DAC60086197C /* SEShowCellPresenter.swift */,
-				19D7D6D12790DAEE0086197C /* SEShowCellConfigurator.swift */,
+				1999A72827922475009E5DDA /* Season */,
+				1999A7272792246A009E5DDA /* Show */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -522,6 +583,25 @@
 			isa = PBXGroup;
 			children = (
 				19D7D6E127915AEB0086197C /* SEShowDetailModelData.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		19D7D6E427915D500086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6E527915D9D0086197C /* SEShowDetailRepository.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		19D7D6E8279160C40086197C /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19D7D6E9279160E90086197C /* SEShowDetailViewController.swift */,
+				19D7D6EC279160F30086197C /* SEShowDetailPresenter.swift */,
+				19D7D6EF279160FB0086197C /* SEShowDetailRouter.swift */,
+				19D7D6F2279161040086197C /* SEShowDetailConfigurator.swift */,
 			);
 			path = ShowDetail;
 			sourceTree = "<group>";
@@ -685,28 +765,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D7D6F3279161040086197C /* SEShowDetailConfigurator.swift in Sources */,
+				19D7D6F0279160FB0086197C /* SEShowDetailRouter.swift in Sources */,
 				19D7D5A4278F560E0086197C /* SEShowRepositoryProtocol.swift in Sources */,
 				19D7D471278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */,
 				19D7D477278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AA27905FC30086197C /* SEShowRepository.swift in Sources */,
 				19D7D6E227915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
+				1999A7252791F38B009E5DDA /* SEInfoView.swift in Sources */,
 				19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DE279158780086197C /* SEShowDetailModel.swift in Sources */,
 				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59C278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
+				1999A72A279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
 				19D7D474278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47A278E9B290086197C /* NetworkConfiguration.swift in Sources */,
 				19D7D5B82790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
 				19D7D6D22790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
+				19D7D6EA279160E90086197C /* SEShowDetailViewController.swift in Sources */,
 				19D7D5AD279097210086197C /* SEHomePresenter.swift in Sources */,
 				19D7D6C82790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
 				19D7D5B02790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A0278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D591278F45FA0086197C /* SENavigationViewController.swift in Sources */,
 				19D7D594278F47B40086197C /* SEStylesApp.swift in Sources */,
+				1999A7322792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
 				19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */,
+				19D7D6ED279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				19D7D6CC2790D9310086197C /* SEPosterRepository.swift in Sources */,
+				19D7D6E627915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
 				19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C42790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D599278F4E620086197C /* SEShowModel.swift in Sources */,
@@ -736,28 +824,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D7D6F4279161040086197C /* SEShowDetailConfigurator.swift in Sources */,
+				19D7D6F1279160FB0086197C /* SEShowDetailRouter.swift in Sources */,
 				19D7D5A5278F560E0086197C /* SEShowRepositoryProtocol.swift in Sources */,
 				19D7D472278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D462278E97F60086197C /* SEHomeViewController.swift in Sources */,
 				19D7D478278E9AD10086197C /* SEError.swift in Sources */,
 				19D7D5AB27905FC30086197C /* SEShowRepository.swift in Sources */,
 				19D7D6E327915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
+				1999A7262791F38B009E5DDA /* SEInfoView.swift in Sources */,
 				19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */,
 				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59D278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
+				1999A72B279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
 				19D7D475278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47B278E9B290086197C /* NetworkConfiguration.swift in Sources */,
 				19D7D5B92790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
 				19D7D6D32790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
+				19D7D6EB279160E90086197C /* SEShowDetailViewController.swift in Sources */,
 				19D7D5AE279097210086197C /* SEHomePresenter.swift in Sources */,
 				19D7D6C92790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
 				19D7D5B12790972C0086197C /* SEHomeRouter.swift in Sources */,
 				19D7D5A1278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D592278F45FA0086197C /* SENavigationViewController.swift in Sources */,
 				19D7D595278F47B40086197C /* SEStylesApp.swift in Sources */,
+				1999A7332792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
 				19D7D463278E97F60086197C /* AppDelegate.swift in Sources */,
+				19D7D6EE279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				19D7D6CD2790D9310086197C /* SEPosterRepository.swift in Sources */,
+				19D7D6E727915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
 				19D7D464278E97F60086197C /* SceneDelegate.swift in Sources */,
 				19D7D6C52790D63A0086197C /* SEPosterUseCase.swift in Sources */,
 				19D7D59A278F4E620086197C /* SEShowModel.swift in Sources */,
