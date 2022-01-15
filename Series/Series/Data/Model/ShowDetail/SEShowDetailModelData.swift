@@ -35,4 +35,13 @@ struct SEShowEpisodeModel: Codable {
     let summary: String
     /// Property that contains the poster of medium and large size
     let image: SEShowPosterModel?
+    
+    init() {
+        self.id = 0
+        self.name = SEKeys.MessageKeys.emptyText
+        self.number = 0
+        self.season = 0
+        self.summary = SEKeys.MessageKeys.emptyText
+        self.image = nil
+    }
 }

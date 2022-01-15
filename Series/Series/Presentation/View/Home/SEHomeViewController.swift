@@ -60,6 +60,11 @@ class SEHomeViewController: UIViewController {
         self.initView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     private func initView() {
         self.title = SEHomeViewController.controllerName
         self.navigationItem.searchController = self.searchBar

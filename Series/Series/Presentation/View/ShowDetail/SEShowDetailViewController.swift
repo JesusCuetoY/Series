@@ -16,7 +16,7 @@ class SEShowDetailViewController: UIViewController {
     // MARK: - View's Properties
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .top
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.backgroundColor = .clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -192,7 +192,7 @@ extension SEShowDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: 30.0) // you can change sizing here
+        return CGSize(width: collectionView.frame.size.width, height: 30.0)
     }
 }
 
