@@ -187,7 +187,7 @@ extension SEShowDetailViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionFooter:
             return UIView() as! UICollectionReusableView
         default:
-            assert(false, "Unexpected element kind")
+            return UIView() as! UICollectionReusableView
         }
     }
     
