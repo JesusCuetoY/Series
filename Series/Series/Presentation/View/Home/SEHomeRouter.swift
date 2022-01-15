@@ -33,9 +33,12 @@ class SEHomeRouter {
     }
 }
 
+// MARK: - SEHomeRouterInput's implementation
 extension SEHomeRouter: SEHomeRouterInput {
     func routeToShowDetail(fromID id: String) {
-        
+        let destinationVC = SEShowDetailViewController()
+        destinationVC.configurator.set(showId: id)
+        self.viewController.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     func routeToActivity() {
