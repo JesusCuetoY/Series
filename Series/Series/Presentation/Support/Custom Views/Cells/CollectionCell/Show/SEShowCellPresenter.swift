@@ -14,10 +14,10 @@ protocol SEShowCellPresenterInput: AnyObject {
 class SEShowCellPresenter {
     
     private let interactor: SEPosterUseCase
-    private let showModel: SEShowModel?
+    private let showModel: SEDisplayModel?
     private weak var output: SEShowCollectionViewCellOutput?
     
-    init(from interactor: SEPosterUseCase, showModel: SEShowModel, output: SEShowCollectionViewCellOutput) {
+    init(from interactor: SEPosterUseCase, showModel: SEDisplayModel, output: SEShowCollectionViewCellOutput) {
         self.interactor = interactor
         self.showModel = showModel
         self.output = output
