@@ -53,7 +53,9 @@ internal struct SEKeys {
         // Series Detail
         static let showDetailScheduleTitle = "SE_SHOW_DETAIL_SCHEDULE_TITLE"
         static let showDetailGenreTitle = "SE_SHOW_DETAIL_GENRES_TITLE"
+        static let emptyInformation = "SE_SHOW_SEASON_EMPTY_LIST"
         // Episodes
+        static let emptyImage = "SE_EMPTY_POSTER_TITLE"
         // Episodes Detail
         static let episodeDetailError = "SE_EPISODE_DETAIL_ERROR_TITLE"
         static let episodeDetailSeasonTitle = "SE_EPISODE_DETAIL_SEASON_TITLE"
@@ -61,7 +63,6 @@ internal struct SEKeys {
         static let episodeDetailSummaryTitle = "SE_EPISODE_DETAIL_SUMMARY_TITLE"
         // Person
         // Person Detail
-        // Favorite
     }
 
     // MARK: - UIController's identifiers - Segues

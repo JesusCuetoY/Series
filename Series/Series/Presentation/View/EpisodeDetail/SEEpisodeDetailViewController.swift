@@ -19,6 +19,7 @@ class SEEpisodeDetailViewController: UIViewController {
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.backgroundColor = .clear
+        imageView.image = UIImage(named: "ic_placeholder")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -29,6 +30,7 @@ class SEEpisodeDetailViewController: UIViewController {
         button.backgroundColor = .clear
         button.addTarget(self, action: #selector(self.didTapBackButtonAction(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = true
         return button
     }()
     private lazy var vInfoStack: UIStackView = {
@@ -54,6 +56,17 @@ class SEEpisodeDetailViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    private lazy var gradientView: UIView = {
+        let view: UIView = UIView(frame: .infinite)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    private lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.0, 1.0]
+        return gradient
+    }()
     
     // MARK: - Properties
     internal lazy var configurator: SEEpisodeDetailConfigurator = { return SEEpisodeDetailConfigurator(from: self) }()
@@ -68,15 +81,20 @@ class SEEpisodeDetailViewController: UIViewController {
         self.presenter.loadData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.gradient.frame = self.gradientView.frame
+    }
+    
     // MARK: - InitView
     private func initView() {
-        self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = SEStylesApp.Color.SE_SecondaryColor
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(self.contentView)
         self.contentView.addSubview(self.posterImageView)
         self.contentView.addSubview(self.backButton)
         self.contentView.addSubview(self.vInfoStack)
+        self.posterImageView.addSubview(self.gradientView)
         // ScrollView
         NSLayoutConstraint.activate([self.scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
                                      self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
@@ -103,10 +121,17 @@ class SEEpisodeDetailViewController: UIViewController {
                                      self.vInfoStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
                                      self.vInfoStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
                                      self.vInfoStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -16.0)])
+        // Gradient View
+        NSLayoutConstraint.activate([self.gradientView.topAnchor.constraint(equalTo: self.posterImageView.topAnchor),
+                                     self.gradientView.bottomAnchor.constraint(equalTo: self.posterImageView.bottomAnchor),
+                                     self.gradientView.leadingAnchor.constraint(equalTo: self.posterImageView.leadingAnchor),
+                                     self.gradientView.trailingAnchor.constraint(equalTo: self.posterImageView.trailingAnchor)])
+        self.gradientView.layer.insertSublayer(gradient, at: 0)
+        self.posterImageView.bringSubviewToFront(gradientView)
     }
     
-    private func addShowInfo(title: String, detail: String) {
-        let detailView: SEInfoView = SEInfoView(from: title, description: detail)
+    private func addShowInfo(title: String, detail: String, isHTML: Bool) {
+        let detailView: SEInfoView = SEInfoView(from: title, description: detail, isHTML: isHTML)
         self.vInfoStack.addArrangedSubview(detailView)
     }
     
@@ -120,8 +145,9 @@ class SEEpisodeDetailViewController: UIViewController {
 extension SEEpisodeDetailViewController: SEEpisodeDetailView {
     func didRetrieveData(name: String, number: String, season: String, summary: String, posterData: Data) {
         self.posterImageView.image = UIImage(data: posterData)
-        self.addShowInfo(title: "Season: ", detail: season)
-        self.addShowInfo(title: "Number: ", detail: number)
-        self.addShowInfo(title: "Summary: ", detail: summary)
+        self.title = name
+        self.addShowInfo(title: "Season: ", detail: season, isHTML: false)
+        self.addShowInfo(title: "Number: ", detail: number, isHTML: false)
+        self.addShowInfo(title: SEKeys.MessageKeys.emptyText, detail: summary, isHTML: true)
     }
 }

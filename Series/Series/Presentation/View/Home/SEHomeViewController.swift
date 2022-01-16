@@ -66,14 +66,10 @@ class SEHomeViewController: UIViewController {
     }
     
     private func initView() {
+        self.navigationItem.largeTitleDisplayMode = .always
         self.title = SEHomeViewController.controllerName
         self.navigationItem.searchController = self.searchBar
         self.view.backgroundColor = SEStylesApp.Color.SE_SecondaryColor
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = SEStylesApp.Color.SE_PrimaryColor
-        self.navigationController?.navigationBar.standardAppearance = navBarAppearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         self.view.addSubview(self.showCollectionView)
         NSLayoutConstraint.activate([self.showCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                                      self.showCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),

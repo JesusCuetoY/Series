@@ -1,17 +1,17 @@
 //
-//  SEShowDetailViewController.swift
+//  SEPeopleDetailViewController.swift
 //  Series
 //
-//  Created by Jesus Cueto on 1/14/22.
+//  Created by Jesus Cueto on 1/16/22.
 //
 
 import UIKit
 
-protocol SEShowDetailView: AnyObject {
-    func didRetrieveData(name: String, date: String, genres: String, summary: String, posterData: Data)
+protocol SEPeopleDetailView: AnyObject {
+    func didRetrieveData(name: String, birthday: String, gender: String, posterData: Data)
 }
 
-class SEShowDetailViewController: UIViewController {
+class SEPeopleDetailViewController: UIViewController {
 
     // MARK: - View's Properties
     private lazy var posterImageView: UIImageView = {
@@ -41,7 +41,7 @@ class SEShowDetailViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    private lazy var seasonsCollectionView: UICollectionView = {
+    private lazy var showsCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 20.0, right: 0.0)
         layout.minimumInteritemSpacing = 0.0
@@ -50,10 +50,8 @@ class SEShowDetailViewController: UIViewController {
         layout.itemSize = CGSize(width: itemWidth, height: UIScreen.main.bounds.height / 7.0)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(SESeasonCollectionViewCell.self, forCellWithReuseIdentifier: SEShowDetailViewController.collectionCellIdentifier)
-        collectionView.register(SESeasonsHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SEShowDetailViewController.collectionSupplementaryHeaderIdentifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.register(SESeasonCollectionViewCell.self, forCellWithReuseIdentifier: SEPeopleDetailViewController.collectionCellIdentifier)
+        collectionView.register(SESeasonsHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SEPeopleDetailViewController.collectionSupplementaryHeaderIdentifier)
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -65,7 +63,6 @@ class SEShowDetailViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-        
     private lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -88,8 +85,8 @@ class SEShowDetailViewController: UIViewController {
     private static let collectionCellIdentifier: String = "seasonCell"
     private static let collectionSupplementaryHeaderIdentifier: String = "seasonHeader"
     private var collectionViewHeightConstraint: NSLayoutConstraint?
-    internal lazy var configurator: SEShowDetailConfigurator = { return SEShowDetailConfigurator(from: self) }()
-    private lazy var presenter: SEShowDetailPresenterInput = { return self.configurator.configure() }()
+    internal lazy var configurator: SEPeopleDetailConfigurator = { return SEPeopleDetailConfigurator(from: self) }()
+    private lazy var presenter: SEPeopleDetailPresenterInput = { return self.configurator.configure() }()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -114,10 +111,10 @@ class SEShowDetailViewController: UIViewController {
         self.contentView.addSubview(self.posterImageView)
         self.contentView.addSubview(self.backButton)
         self.contentView.addSubview(self.vInfoStack)
-        self.contentView.addSubview(seasonsCollectionView)
+        self.contentView.addSubview(showsCollectionView)
         self.posterImageView.addSubview(self.gradientView)
         // ScrollView
-        NSLayoutConstraint.activate([self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+        NSLayoutConstraint.activate([self.scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
                                      self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
                                      self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
                                      self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)])
@@ -141,12 +138,12 @@ class SEShowDetailViewController: UIViewController {
         NSLayoutConstraint.activate([self.vInfoStack.topAnchor.constraint(equalTo: self.posterImageView.bottomAnchor, constant: 16.0),
                                      self.vInfoStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
                                      self.vInfoStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-                                     self.vInfoStack.bottomAnchor.constraint(equalTo: self.seasonsCollectionView.topAnchor, constant: -16.0)])
+                                     self.vInfoStack.bottomAnchor.constraint(equalTo: self.showsCollectionView.topAnchor, constant: -16.0)])
         // ColectionView
-        self.collectionViewHeightConstraint = self.seasonsCollectionView.heightAnchor.constraint(equalToConstant: 100.0)
-        NSLayoutConstraint.activate([self.seasonsCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-                                     self.seasonsCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-                                     self.seasonsCollectionView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -16.0),
+        self.collectionViewHeightConstraint = self.showsCollectionView.heightAnchor.constraint(equalToConstant: 100.0)
+        NSLayoutConstraint.activate([self.showsCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+                                     self.showsCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+                                     self.showsCollectionView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -16.0),
                                      self.collectionViewHeightConstraint!])
         // Gradient View
         NSLayoutConstraint.activate([self.gradientView.topAnchor.constraint(equalTo: self.posterImageView.topAnchor),
@@ -168,28 +165,28 @@ class SEShowDetailViewController: UIViewController {
     }
 }
 
-// MARK: - SEShowDetailView's implementation
-extension SEShowDetailViewController: SEShowDetailView {
-    func didRetrieveData(name: String, date: String, genres: String, summary: String, posterData: Data) {
-        let image = UIImage(data: posterData)
-        self.posterImageView.image = image
+// MARK: - SEPeopleDetailView's implementation
+extension SEPeopleDetailViewController: SEPeopleDetailView {
+    func didRetrieveData(name: String, birthday: String, gender: String, posterData: Data) {
         self.title = name
-        self.addShowInfo(title: "Schedule: ", detail: date, isHTML: false)
-        self.addShowInfo(title: "Genres: ", detail: genres, isHTML: false)
-        self.addShowInfo(title: SEKeys.MessageKeys.emptyText, detail: summary, isHTML: true)
-        self.collectionViewHeightConstraint?.constant = ((UIScreen.main.bounds.height / 7.0) * CGFloat(self.presenter.numberOfSections)) + (60.0 * CGFloat(self.presenter.numberOfSections))
-        self.seasonsCollectionView.reloadData()
+        self.posterImageView.image = UIImage(data: posterData)
+        self.addShowInfo(title: "Birthday: ", detail: birthday, isHTML: false)
+        self.addShowInfo(title: "Gender: ", detail: gender, isHTML: false)
+        self.collectionViewHeightConstraint?.constant = ((UIScreen.main.bounds.height / 7.0) * CGFloat(self.presenter.numberOfSections) + (30.0 * CGFloat(self.presenter.numberOfSections)))
+        self.showsCollectionView.dataSource = self
+        self.showsCollectionView.delegate = self
+        self.showsCollectionView.reloadData()
     }
 }
 
 // MARK: - UICollectionViewDelegate's methods
-extension SEShowDetailViewController: UICollectionViewDelegate {
+extension SEPeopleDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.presenter.showEpisode(from: indexPath)
     }
 }
+
 // MARK: - UICollectionViewDatasource's methods
-extension SEShowDetailViewController: UICollectionViewDataSource {
+extension SEPeopleDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.presenter.numberOfSections
     }
@@ -199,17 +196,17 @@ extension SEShowDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SEShowDetailViewController.collectionCellIdentifier, for: indexPath) as? SESeasonCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SEPeopleDetailViewController.collectionCellIdentifier, for: indexPath) as? SESeasonCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(from: self.presenter.getEpisode(from: indexPath), section: indexPath.section, delegate: self)
+        cell.setupCell(from: self.presenter.getShows(from: indexPath), section: indexPath.section, delegate: self)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SEShowDetailViewController.collectionSupplementaryHeaderIdentifier, for: indexPath) as? SESeasonsHeaderCollectionReusableView
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SEPeopleDetailViewController.collectionSupplementaryHeaderIdentifier, for: indexPath) as? SESeasonsHeaderCollectionReusableView
             headerView?.setupViews(description: self.presenter.getSectionTitle(section: indexPath.section))
             return headerView ?? (UIView() as! UICollectionReusableView)
         case UICollectionView.elementKindSectionFooter:
@@ -225,8 +222,8 @@ extension SEShowDetailViewController: UICollectionViewDataSource {
 }
 
 // MARK: - SESeasonCollectionViewCellDelegate's implementation
-extension SEShowDetailViewController: SESeasonCollectionViewCellDelegate {
+extension SEPeopleDetailViewController: SESeasonCollectionViewCellDelegate {
     func didSelectItem(at index: IndexPath) {
-        self.presenter.showEpisode(from: index)
+        self.presenter.goToShowDetail(from: index)
     }
 }

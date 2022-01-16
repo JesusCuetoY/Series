@@ -22,6 +22,7 @@
 "SE_SHOW_LIST_SEARCH_PLACEHOLDER" = "Buscar";
 "SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE" = "No se encontraron resultados para '%@'";
 "SE_SHOW_LIST_TITLE" = "Series";
+"SE_SHOW_SEASON_EMPTY_LIST" = "No hay información disponible";
 // MARK: - People's list
 "SE_PEOPLE_LIST_ERROR_TITLE" = "Error al cargar personas";
 "SE_PEOPLE_LIST_SEARCH_EMPTY_MESSAGE" = "No se encontraron resultados para '%@'";
@@ -34,3 +35,5 @@
 "SE_EPISODE_DETAIL_SEASON_TITLE" = "Temporada: ";
 "SE_EPISODE_DETAIL_NUMBER_TITLE" = "Número: ";
 "SE_EPISODE_DETAIL_SUMMARY_TITLE" = "Sinopsis: ";
+// MARK: - Poster
+"SE_EMPTY_POSTER_TITLE" = "No hay imagen disponible";
