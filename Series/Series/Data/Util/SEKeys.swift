@@ -25,6 +25,10 @@ internal struct SEKeys {
         static let showSearchURL = "search/shows"
         static let showSeasonsURL = "seasons"
         static let showEpisodesURL = "episodes"
+        // MARK: - People's URLs
+        static let peopleSearchURL = "search/people"
+        static let peopleListURL = "people"
+        static let peopleShowsURL = "castcredits"
     }
 
     // MARK: - Message keys
@@ -45,9 +49,16 @@ internal struct SEKeys {
         static let listErrorTitle = "SE_SHOW_LIST_ERROR_TITLE"
         static let listSearchPlaceholder = "SE_SHOW_LIST_SEARCH_PLACEHOLDER"
         static let listSearchEmptyErrorMessage = "SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE"
+        static let listTitle = "SE_SHOW_LIST_TITLE"
         // Series Detail
+        static let showDetailScheduleTitle = "SE_SHOW_DETAIL_SCHEDULE_TITLE"
+        static let showDetailGenreTitle = "SE_SHOW_DETAIL_GENRES_TITLE"
         // Episodes
         // Episodes Detail
+        static let episodeDetailError = "SE_EPISODE_DETAIL_ERROR_TITLE"
+        static let episodeDetailSeasonTitle = "SE_EPISODE_DETAIL_SEASON_TITLE"
+        static let episodeDetailNumberTitle = "SE_EPISODE_DETAIL_NUMBER_TITLE"
+        static let episodeDetailSummaryTitle = "SE_EPISODE_DETAIL_SUMMARY_TITLE"
         // Person
         // Person Detail
         // Favorite

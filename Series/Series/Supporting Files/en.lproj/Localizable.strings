@@ -21,3 +21,16 @@
 "SE_SHOW_LIST_ERROR_TITLE" = "Couldn't load shows";
 "SE_SHOW_LIST_SEARCH_PLACEHOLDER" = "Search";
 "SE_SHOW_LIST_SEARCH_EMPTY_MESSAGE" = "No results for '%@'";
+"SE_SHOW_LIST_TITLE" = "Shows";
+// MARK: - People's list
+"SE_PEOPLE_LIST_ERROR_TITLE" = "Couldn't load people";
+"SE_PEOPLE_LIST_SEARCH_EMPTY_MESSAGE" = "No results for '%@'";
+"SE_PEOPLE_LIST_TITLE" = "People";
+// MARK: - Show's detail
+"SE_SHOW_DETAIL_SCHEDULE_TITLE" = "Schedule: ";
+"SE_SHOW_DETAIL_GENRES_TITLE" = "Genres: ";
+// MARK: - Episodes detail
+"SE_EPISODE_DETAIL_ERROR_TITLE" = "Couldn't load episode";
+"SE_EPISODE_DETAIL_SEASON_TITLE" = "Season: ";
+"SE_EPISODE_DETAIL_NUMBER_TITLE" = "Number: ";
+"SE_EPISODE_DETAIL_SUMMARY_TITLE" = "Summary: ";

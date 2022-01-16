@@ -26,6 +26,22 @@
 		1999A74627929EFF009E5DDA /* SETabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74427929EFF009E5DDA /* SETabBarViewController.swift */; };
 		1999A7492792A3C6009E5DDA /* SEPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7482792A3C6009E5DDA /* SEPeopleViewController.swift */; };
 		1999A74A2792A3C6009E5DDA /* SEPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A7482792A3C6009E5DDA /* SEPeopleViewController.swift */; };
+		1999A74C27947855009E5DDA /* SEPeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74B27947855009E5DDA /* SEPeoplePresenter.swift */; };
+		1999A74D27947855009E5DDA /* SEPeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74B27947855009E5DDA /* SEPeoplePresenter.swift */; };
+		1999A74F2794785B009E5DDA /* SEPeopleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74E2794785B009E5DDA /* SEPeopleRouter.swift */; };
+		1999A7502794785B009E5DDA /* SEPeopleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A74E2794785B009E5DDA /* SEPeopleRouter.swift */; };
+		1999A75227947866009E5DDA /* SEPeopleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A75127947866009E5DDA /* SEPeopleConfigurator.swift */; };
+		1999A75327947866009E5DDA /* SEPeopleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A75127947866009E5DDA /* SEPeopleConfigurator.swift */; };
+		1999A756279478A7009E5DDA /* SEPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A755279478A7009E5DDA /* SEPeopleUseCase.swift */; };
+		1999A757279478A7009E5DDA /* SEPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A755279478A7009E5DDA /* SEPeopleUseCase.swift */; };
+		1999A75A279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A759279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift */; };
+		1999A75B279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A759279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift */; };
+		1999A75E279478DE009E5DDA /* SEPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A75D279478DE009E5DDA /* SEPeopleModel.swift */; };
+		1999A75F279478DE009E5DDA /* SEPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A75D279478DE009E5DDA /* SEPeopleModel.swift */; };
+		1999A76127947BAF009E5DDA /* SEPeopleModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A76027947BAF009E5DDA /* SEPeopleModelData.swift */; };
+		1999A76227947BAF009E5DDA /* SEPeopleModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A76027947BAF009E5DDA /* SEPeopleModelData.swift */; };
+		1999A76727947E6E009E5DDA /* SEPeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A76627947E6E009E5DDA /* SEPeopleRepository.swift */; };
+		1999A76827947E6E009E5DDA /* SEPeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999A76627947E6E009E5DDA /* SEPeopleRepository.swift */; };
 		19D7D41D278E8C6C0086197C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41C278E8C6C0086197C /* AppDelegate.swift */; };
 		19D7D41F278E8C6C0086197C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D41E278E8C6C0086197C /* SceneDelegate.swift */; };
 		19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7D420278E8C6C0086197C /* SEHomeViewController.swift */; };
@@ -130,6 +146,14 @@
 		1999A74027928B26009E5DDA /* SEEpisodeDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEpisodeDetailConfigurator.swift; sourceTree = "<group>"; };
 		1999A74427929EFF009E5DDA /* SETabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETabBarViewController.swift; sourceTree = "<group>"; };
 		1999A7482792A3C6009E5DDA /* SEPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleViewController.swift; sourceTree = "<group>"; };
+		1999A74B27947855009E5DDA /* SEPeoplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeoplePresenter.swift; sourceTree = "<group>"; };
+		1999A74E2794785B009E5DDA /* SEPeopleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleRouter.swift; sourceTree = "<group>"; };
+		1999A75127947866009E5DDA /* SEPeopleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleConfigurator.swift; sourceTree = "<group>"; };
+		1999A755279478A7009E5DDA /* SEPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleUseCase.swift; sourceTree = "<group>"; };
+		1999A759279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleRepositoryProtocol.swift; sourceTree = "<group>"; };
+		1999A75D279478DE009E5DDA /* SEPeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleModel.swift; sourceTree = "<group>"; };
+		1999A76027947BAF009E5DDA /* SEPeopleModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleModelData.swift; sourceTree = "<group>"; };
+		1999A76627947E6E009E5DDA /* SEPeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPeopleRepository.swift; sourceTree = "<group>"; };
 		19D7D419278E8C6C0086197C /* Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Series.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D7D41C278E8C6C0086197C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D7D41E278E8C6C0086197C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +292,49 @@
 			isa = PBXGroup;
 			children = (
 				1999A7482792A3C6009E5DDA /* SEPeopleViewController.swift */,
+				1999A74B27947855009E5DDA /* SEPeoplePresenter.swift */,
+				1999A74E2794785B009E5DDA /* SEPeopleRouter.swift */,
+				1999A75127947866009E5DDA /* SEPeopleConfigurator.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		1999A7542794786C009E5DDA /* People */ = {
+			isa = PBXGroup;
+			children = (
+				1999A755279478A7009E5DDA /* SEPeopleUseCase.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		1999A758279478AC009E5DDA /* People */ = {
+			isa = PBXGroup;
+			children = (
+				1999A759279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		1999A75C279478CA009E5DDA /* People */ = {
+			isa = PBXGroup;
+			children = (
+				1999A75D279478DE009E5DDA /* SEPeopleModel.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		1999A76327947BB4009E5DDA /* People */ = {
+			isa = PBXGroup;
+			children = (
+				1999A76027947BAF009E5DDA /* SEPeopleModelData.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		1999A76527947E5F009E5DDA /* People */ = {
+			isa = PBXGroup;
+			children = (
+				1999A76627947E6E009E5DDA /* SEPeopleRepository.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -376,6 +443,7 @@
 		19D7D451278E92A70086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1999A76527947E5F009E5DDA /* People */,
 				19D7D6E427915D500086197C /* ShowDetail */,
 				19D7D6CA2790D9220086197C /* Poster */,
 				19D7D5A827905FB60086197C /* Home */,
@@ -386,6 +454,7 @@
 		19D7D452278E92B20086197C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1999A76327947BB4009E5DDA /* People */,
 				19D7D6E027915ACF0086197C /* ShowDetail */,
 				19D7D59E278F50CC0086197C /* Home */,
 			);
@@ -411,6 +480,7 @@
 		19D7D455278E92CD0086197C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1999A758279478AC009E5DDA /* People */,
 				19D7D6D827914C4D0086197C /* ShowDetail */,
 				19D7D6C62790D7AE0086197C /* Poster */,
 				19D7D5A2278F55F70086197C /* Home */,
@@ -421,6 +491,7 @@
 		19D7D456278E92D20086197C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1999A75C279478CA009E5DDA /* People */,
 				19D7D6DC279158620086197C /* ShowDetail */,
 				19D7D597278F4E500086197C /* Home */,
 			);
@@ -430,6 +501,7 @@
 		19D7D457278E92D60086197C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				1999A7542794786C009E5DDA /* People */,
 				19D7D6D427914C2A0086197C /* ShowDetail */,
 				19D7D6C22790D59C0086197C /* Poster */,
 				19D7D596278F4E4B0086197C /* Home */,
@@ -818,6 +890,7 @@
 			files = (
 				19D7D6F3279161040086197C /* SEShowDetailConfigurator.swift in Sources */,
 				19D7D6F0279160FB0086197C /* SEShowDetailRouter.swift in Sources */,
+				1999A756279478A7009E5DDA /* SEPeopleUseCase.swift in Sources */,
 				19D7D5A4278F560E0086197C /* SEShowRepositoryProtocol.swift in Sources */,
 				19D7D471278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D421278E8C6C0086197C /* SEHomeViewController.swift in Sources */,
@@ -825,23 +898,29 @@
 				19D7D5AA27905FC30086197C /* SEShowRepository.swift in Sources */,
 				19D7D6E227915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
 				1999A7252791F38B009E5DDA /* SEInfoView.swift in Sources */,
+				1999A74F2794785B009E5DDA /* SEPeopleRouter.swift in Sources */,
 				1999A7492792A3C6009E5DDA /* SEPeopleViewController.swift in Sources */,
+				1999A75E279478DE009E5DDA /* SEPeopleModel.swift in Sources */,
 				19D7D5B3279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DE279158780086197C /* SEShowDetailModel.swift in Sources */,
 				1999A73827928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */,
+				1999A75227947866009E5DDA /* SEPeopleConfigurator.swift in Sources */,
 				19D7D47D278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59C278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				1999A72A279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
 				19D7D474278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47A278E9B290086197C /* NetworkConfiguration.swift in Sources */,
+				1999A75A279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift in Sources */,
 				19D7D5B82790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
 				19D7D6D22790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
 				19D7D6EA279160E90086197C /* SEShowDetailViewController.swift in Sources */,
 				19D7D5AD279097210086197C /* SEHomePresenter.swift in Sources */,
 				19D7D6C82790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
 				19D7D5B02790972C0086197C /* SEHomeRouter.swift in Sources */,
+				1999A76127947BAF009E5DDA /* SEPeopleModelData.swift in Sources */,
 				19D7D5A0278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D591278F45FA0086197C /* SENavigationViewController.swift in Sources */,
+				1999A76727947E6E009E5DDA /* SEPeopleRepository.swift in Sources */,
 				1999A73B27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */,
 				19D7D594278F47B40086197C /* SEStylesApp.swift in Sources */,
 				1999A7322792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
@@ -849,6 +928,7 @@
 				19D7D6ED279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				1999A74527929EFF009E5DDA /* SETabBarViewController.swift in Sources */,
 				19D7D6CC2790D9310086197C /* SEPosterRepository.swift in Sources */,
+				1999A74C27947855009E5DDA /* SEPeoplePresenter.swift in Sources */,
 				19D7D6E627915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
 				1999A73E27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */,
 				1999A74127928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */,
@@ -884,6 +964,7 @@
 			files = (
 				19D7D6F4279161040086197C /* SEShowDetailConfigurator.swift in Sources */,
 				19D7D6F1279160FB0086197C /* SEShowDetailRouter.swift in Sources */,
+				1999A757279478A7009E5DDA /* SEPeopleUseCase.swift in Sources */,
 				19D7D5A5278F560E0086197C /* SEShowRepositoryProtocol.swift in Sources */,
 				19D7D472278E9A6C0086197C /* WebServicesManager.swift in Sources */,
 				19D7D462278E97F60086197C /* SEHomeViewController.swift in Sources */,
@@ -891,23 +972,29 @@
 				19D7D5AB27905FC30086197C /* SEShowRepository.swift in Sources */,
 				19D7D6E327915AEB0086197C /* SEShowDetailModelData.swift in Sources */,
 				1999A7262791F38B009E5DDA /* SEInfoView.swift in Sources */,
+				1999A7502794785B009E5DDA /* SEPeopleRouter.swift in Sources */,
 				1999A74A2792A3C6009E5DDA /* SEPeopleViewController.swift in Sources */,
+				1999A75F279478DE009E5DDA /* SEPeopleModel.swift in Sources */,
 				19D7D5B4279097360086197C /* SEHomeConfigurator.swift in Sources */,
 				19D7D6DF279158780086197C /* SEShowDetailModel.swift in Sources */,
 				1999A73927928B07009E5DDA /* SEEpisodeDetailViewController.swift in Sources */,
+				1999A75327947866009E5DDA /* SEPeopleConfigurator.swift in Sources */,
 				19D7D47E278E9BAC0086197C /* SEKeys.swift in Sources */,
 				19D7D59D278F4F3A0086197C /* SEShowUseCase.swift in Sources */,
 				1999A72B279224AA009E5DDA /* SESeasonCollectionViewCell.swift in Sources */,
 				19D7D475278E9A970086197C /* NetworkManager.swift in Sources */,
 				19D7D47B278E9B290086197C /* NetworkConfiguration.swift in Sources */,
+				1999A75B279478BE009E5DDA /* SEPeopleRepositoryProtocol.swift in Sources */,
 				19D7D5B92790A3F90086197C /* SEShowCollectionViewCell.swift in Sources */,
 				19D7D6D32790DAEE0086197C /* SEShowCellConfigurator.swift in Sources */,
 				19D7D6EB279160E90086197C /* SEShowDetailViewController.swift in Sources */,
 				19D7D5AE279097210086197C /* SEHomePresenter.swift in Sources */,
 				19D7D6C92790D7BE0086197C /* SEPosterRepositoryProtocol.swift in Sources */,
 				19D7D5B12790972C0086197C /* SEHomeRouter.swift in Sources */,
+				1999A76227947BAF009E5DDA /* SEPeopleModelData.swift in Sources */,
 				19D7D5A1278F50E80086197C /* SEShowModelData.swift in Sources */,
 				19D7D592278F45FA0086197C /* SENavigationViewController.swift in Sources */,
+				1999A76827947E6E009E5DDA /* SEPeopleRepository.swift in Sources */,
 				1999A73C27928B0F009E5DDA /* SEEpisodeDetailPresenter.swift in Sources */,
 				19D7D595278F47B40086197C /* SEStylesApp.swift in Sources */,
 				1999A7332792420F009E5DDA /* SESeasonsHeaderCollectionReusableView.swift in Sources */,
@@ -915,6 +1002,7 @@
 				19D7D6EE279160F30086197C /* SEShowDetailPresenter.swift in Sources */,
 				1999A74627929EFF009E5DDA /* SETabBarViewController.swift in Sources */,
 				19D7D6CD2790D9310086197C /* SEPosterRepository.swift in Sources */,
+				1999A74D27947855009E5DDA /* SEPeoplePresenter.swift in Sources */,
 				19D7D6E727915D9E0086197C /* SEShowDetailRepository.swift in Sources */,
 				1999A73F27928B19009E5DDA /* SEEpisodeDetailRouter.swift in Sources */,
 				1999A74227928B26009E5DDA /* SEEpisodeDetailConfigurator.swift in Sources */,

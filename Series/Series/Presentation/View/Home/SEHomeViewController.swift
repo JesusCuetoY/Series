@@ -50,7 +50,7 @@ class SEHomeViewController: UIViewController {
     // MARK: - Properties
     private lazy var configurator: SEHomeConfigurator = { return SEHomeConfigurator(from: self) }()
     private lazy var presenter: SEHomePresenterInput = { return self.configurator.configure() }()
-    private static let controllerName: String = "Shows"
+    private static let controllerName: String = NSLocalizedString(SEKeys.MessageKeys.listTitle, comment: SEKeys.MessageKeys.emptyText)
     private static let collectionCellIdentifier: String = "showCell"
 
     // MARK: - Life Cycle
