@@ -23,32 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0ABA47E-2527-4EA0-8397-F8001C1F477A"
+            uuid = "E1D1197E-0E56-4809-921B-E6D1461C0089"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Series/Presentation/View/ShowDetail/SEShowDetailViewController.swift"
+            filePath = "Series/Presentation/View/Navigation/SENavigationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B9DBD3FE-6DE9-43BC-B685-B9E035E33653"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Series/Presentation/View/ShowDetail/SEShowDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "collectionView(_:layout:referenceSizeForHeaderInSection:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "configureBar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

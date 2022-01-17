@@ -1,25 +1,26 @@
 //
-//  SEShowDetailRouter.swift
+//  SEPeopleRouter.swift
 //  Series
 //
-//  Created by Jesus Cueto on 1/14/22.
+//  Created by Jesus Cueto on 1/16/22.
 //
 
 import UIKit
 
-protocol SEShowDetailRouterInput: AnyObject {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel)
-    func routeToShowList()
+protocol SEPeopleRouterInput: AnyObject {
+    func routeToPersonDetail(fromID id: String)
     func routeToActivity()
     func routeToStopActivity()
     func routeToError(model: SEError?)
+    func routeToEmptyResultError(message: String)
+    func routeToHideError()
 }
 
-class SEShowDetailRouter {
+class SEPeopleRouter {
     /// Home view controller property
-    private unowned var viewController: SEShowDetailViewController
+    private unowned var viewController: SEPeopleViewController
     
-    init(from viewController: SEShowDetailViewController) {
+    init(from viewController: SEPeopleViewController) {
         self.viewController = viewController
     }
     
@@ -32,20 +33,16 @@ class SEShowDetailRouter {
     }
 }
 
-// MARK: - SEShowDetailRouterInput's implementation
-extension SEShowDetailRouter: SEShowDetailRouterInput {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel) {
-        let destinationVC = SEEpisodeDetailViewController()
-        destinationVC.configurator.set(episodeInfo: episode)
+// MARK: - SEHomeRouterInput's implementation
+extension SEPeopleRouter: SEPeopleRouterInput {
+    func routeToPersonDetail(fromID id: String) {
+        let destinationVC = SEPeopleDetailViewController()
+        destinationVC.configurator.set(personId: id)
         self.viewController.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     func routeToActivity() {
         
-    }
-    
-    func routeToShowList() {
-        self.viewController.navigationController?.popViewController(animated: true)
     }
     
     func routeToStopActivity() {
@@ -54,5 +51,16 @@ extension SEShowDetailRouter: SEShowDetailRouterInput {
     
     func routeToError(model: SEError?) {
         self.viewController.present(self.getAlert(title: NSLocalizedString(SEKeys.MessageKeys.listErrorTitle, comment: SEKeys.MessageKeys.emptyText), message: model?.message), animated: true, completion: nil)
+    }
+    
+    func routeToEmptyResultError(message: String) {
+        self.viewController.searchResultErrorLabel.text = message
+        self.viewController.showCollectionView.isHidden = true
+        self.viewController.searchResultErrorLabel.isHidden = false
+    }
+    
+    func routeToHideError() {
+        self.viewController.searchResultErrorLabel.isHidden = true
+        self.viewController.showCollectionView.isHidden = false
     }
 }

@@ -27,6 +27,8 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "ic_placeholder")
         return imageView
     }()
     private lazy var showNameLabel: UILabel = {
@@ -39,6 +41,17 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    private lazy var gradientView: UIView = {
+        let view: UIView = UIView(frame: .infinite)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    private lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.0, 1.0]
+        return gradient
+    }()
     private var configurator: SEShowCellConfigurator?
     private var presenter: SEShowCellPresenterInput?
     
@@ -46,6 +59,12 @@ class SEShowCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupViews()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.gradient.frame = self.posterImageView.frame
+        self.posterImageView.layer.cornerRadius = 4.0
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -56,15 +75,18 @@ class SEShowCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.configurator = nil
         self.presenter = nil
-        self.posterImageView.image = nil
+        self.posterImageView.image = UIImage(named: "ic_placeholder")
         self.posterImageView.backgroundColor = .clear
         self.showNameLabel.text = SEKeys.MessageKeys.emptyText
+        self.gradientView.isHidden = false
+        self.stopAnimation()
     }
     
     // MARK: - Setup
     private func setupViews() {
         self.addSubview(posterImageView)
         self.addSubview(showNameLabel)
+        self.posterImageView.addSubview(gradientView)
         NSLayoutConstraint.activate([self.posterImageView.topAnchor.constraint(equalTo: self.topAnchor),
                                      self.posterImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
                                      self.posterImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -73,6 +95,12 @@ class SEShowCollectionViewCell: UICollectionViewCell {
                                      self.showNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0),
                                      self.showNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0),
                                      self.showNameLabel.heightAnchor.constraint(equalToConstant: self.bounds.height / 4.0)])
+        NSLayoutConstraint.activate([self.gradientView.topAnchor.constraint(equalTo: self.posterImageView.topAnchor),
+                                     self.gradientView.bottomAnchor.constraint(equalTo: self.posterImageView.bottomAnchor),
+                                     self.gradientView.leadingAnchor.constraint(equalTo: self.posterImageView.leadingAnchor),
+                                     self.gradientView.trailingAnchor.constraint(equalTo: self.posterImageView.trailingAnchor)])
+        self.gradientView.layer.insertSublayer(gradient, at: 0)
+        self.posterImageView.bringSubviewToFront(gradientView)
         SEStylesApp.personalizeLabelBold(self.showNameLabel, withSizeFont: 12.0)
     }
     
@@ -83,7 +111,9 @@ class SEShowCollectionViewCell: UICollectionViewCell {
     }
     
     func setupShimmerCell() {
-        self.posterImageView.backgroundColor = .darkGray
+        self.posterImageView.image = nil
+        self.gradientView.isHidden = true
+        self.startAnimating()
     }
 }
 
@@ -93,8 +123,6 @@ extension SEShowCollectionViewCell: SEShowCollectionViewCellOutput {
         self.showNameLabel.text = name
         if let imgData = data {
             self.posterImageView.image = UIImage(data: imgData)
-        } else {
-            self.posterImageView.image = UIImage()
         }
     }
 }

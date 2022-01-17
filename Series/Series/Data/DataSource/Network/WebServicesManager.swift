@@ -336,17 +336,16 @@ internal class WebServicesResponse: NSObject {
     - Parameter completionHandler: Block of code that receives a `WebServicesResponse` object, which contains the data of the service response.
     */
     internal class func getWithURL(_ URL: Foundation.URL?, parameters: Any?, dataTask: UnsafeMutablePointer<URLSessionDataTask?>, completionHandler: @escaping (_ webServicesResponse: WebServicesResponse) -> Void) {
-        var composedURL = URL
-        if let parameters = parameters {
-            let urlPath = self.formGetURL(urlPath: URL?.relativeString ?? SEKeys.MessageKeys.emptyText, parameters: parameters)
-            composedURL = Foundation.URL(string: urlPath)
+        var composedURL = URLComponents(string: URL?.relativeString ?? SEKeys.MessageKeys.emptyText)
+        if let parameter = parameters, let param = parameter as? [String: Any] {
+            composedURL?.queryItems =  param.map { URLQueryItem(name: $0.key, value: $0.value as? String) }
         }
         
         //Print send
         print(composedURL as Any)
         print(parameters as Any)
         
-        var request = URLRequest(url: composedURL!)
+        var request = URLRequest(url: (composedURL?.url!)!)
         request.httpMethod = "GET"
         
         dataTask.pointee = session.dataTask(with: request, completionHandler: { (data: Data?, URLResponse: Foundation.URLResponse?, error: Error?) -> Void in

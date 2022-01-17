@@ -1,25 +1,25 @@
 //
-//  SEShowDetailRouter.swift
+//  SEPeopleDetailRouter.swift
 //  Series
 //
-//  Created by Jesus Cueto on 1/14/22.
+//  Created by Jesus Cueto on 1/16/22.
 //
 
 import UIKit
 
-protocol SEShowDetailRouterInput: AnyObject {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel)
-    func routeToShowList()
+protocol SEPeopleDetailRouterInput: AnyObject {
+    func routeToShowDetail(from id: String)
+    func routeToPeopleList()
     func routeToActivity()
     func routeToStopActivity()
     func routeToError(model: SEError?)
 }
 
-class SEShowDetailRouter {
+class SEPeopleDetailRouter {
     /// Home view controller property
-    private unowned var viewController: SEShowDetailViewController
+    private unowned var viewController: SEPeopleDetailViewController
     
-    init(from viewController: SEShowDetailViewController) {
+    init(from viewController: SEPeopleDetailViewController) {
         self.viewController = viewController
     }
     
@@ -32,11 +32,11 @@ class SEShowDetailRouter {
     }
 }
 
-// MARK: - SEShowDetailRouterInput's implementation
-extension SEShowDetailRouter: SEShowDetailRouterInput {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel) {
-        let destinationVC = SEEpisodeDetailViewController()
-        destinationVC.configurator.set(episodeInfo: episode)
+// MARK: - SEPeopleDetailRouterInput's implementation
+extension SEPeopleDetailRouter: SEPeopleDetailRouterInput {
+    func routeToShowDetail(from id: String) {
+        let destinationVC = SEShowDetailViewController()
+        destinationVC.configurator.set(showId: id)
         self.viewController.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
@@ -44,7 +44,7 @@ extension SEShowDetailRouter: SEShowDetailRouterInput {
         
     }
     
-    func routeToShowList() {
+    func routeToPeopleList() {
         self.viewController.navigationController?.popViewController(animated: true)
     }
     

@@ -1,5 +1,5 @@
 //
-//  SEShowDetailRouter.swift
+//  SEEpisodeDetailRouter.swift
 //  Series
 //
 //  Created by Jesus Cueto on 1/14/22.
@@ -7,19 +7,18 @@
 
 import UIKit
 
-protocol SEShowDetailRouterInput: AnyObject {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel)
-    func routeToShowList()
+protocol SEEpisodeDetailRouterInput: AnyObject {
+    func routeToShow()
     func routeToActivity()
     func routeToStopActivity()
     func routeToError(model: SEError?)
 }
 
-class SEShowDetailRouter {
+class SEEpisodeDetailRouter {
     /// Home view controller property
-    private unowned var viewController: SEShowDetailViewController
+    private unowned var viewController: SEEpisodeDetailViewController
     
-    init(from viewController: SEShowDetailViewController) {
+    init(from viewController: SEEpisodeDetailViewController) {
         self.viewController = viewController
     }
     
@@ -33,19 +32,13 @@ class SEShowDetailRouter {
 }
 
 // MARK: - SEShowDetailRouterInput's implementation
-extension SEShowDetailRouter: SEShowDetailRouterInput {
-    func routeToShowEpisodeDetail(from episode: SEShowEpisodeModel) {
-        let destinationVC = SEEpisodeDetailViewController()
-        destinationVC.configurator.set(episodeInfo: episode)
-        self.viewController.navigationController?.pushViewController(destinationVC, animated: true)
+extension SEEpisodeDetailRouter: SEEpisodeDetailRouterInput {
+    func routeToShow() {
+        self.viewController.navigationController?.popViewController(animated: true)
     }
     
     func routeToActivity() {
         
-    }
-    
-    func routeToShowList() {
-        self.viewController.navigationController?.popViewController(animated: true)
     }
     
     func routeToStopActivity() {
