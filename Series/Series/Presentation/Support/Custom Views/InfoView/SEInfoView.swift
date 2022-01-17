@@ -29,12 +29,23 @@ class SEInfoView: UIView {
     }()
     
     // MARK: - Init
-    init(from title: String, description: String) {
+    init(from title: String, description: String, isHTML: Bool) {
         super.init(frame: .infinite)
         self.initView()
         self.titleLabel.text = title
         self.titleLabel.sizeToFit()
-        self.descriptionLabel.text = description
+        if isHTML {
+            do {
+                let htmlData = Data(description.utf8)
+                let attributedString = try NSMutableAttributedString(data: htmlData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+                attributedString.addAttributes([NSAttributedString.Key.foregroundColor: SEStylesApp.Color.SE_TextColor!, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0, weight: .medium)], range: NSRange(location: 0, length: attributedString.length))
+                self.descriptionLabel.attributedText = attributedString
+            } catch {
+                self.descriptionLabel.text = description
+            }
+        } else {
+            self.descriptionLabel.text = description
+        }
         self.descriptionLabel.sizeToFit()
     }
     
