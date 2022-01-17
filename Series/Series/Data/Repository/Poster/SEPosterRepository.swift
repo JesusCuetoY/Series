@@ -24,6 +24,10 @@ class SEPosterRepository {
 // MARK: - SEPosterRepositoryProtocol implementation
 extension SEPosterRepository: SEPosterRepositoryProtocol {
     func getPosterImage(fromPath path: String, success: @escaping (Data) -> Void, failure: @escaping (SEError) -> Void) {
+        if path == SEKeys.MessageKeys.emptyText {
+            failure(SEError(code: 10004, message: NSLocalizedString(SEKeys.MessageKeys.emptyImage, comment: SEKeys.MessageKeys.emptyText), name: "Error"))
+            return
+        }
         let url = URL(string: path)!
         self.request?.getRequest(url, returningClass: Data.self, returningError: SEError.self, parameters: nil, success: success, failure: failure)
     }

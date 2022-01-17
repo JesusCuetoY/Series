@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  SEPeopleViewController.swift
 //  Series
 //
-//  Created by Jesus Cueto on 1/11/22.
+//  Created by Jesus Cueto on 1/15/22.
 //
 
 import UIKit
 
-protocol SEHomeView: AnyObject {
+protocol SEPeopleView: AnyObject {
     func didRetrieveData()
 }
 
-class SEHomeViewController: UIViewController {
+class SEPeopleViewController: UIViewController {
     
     // MARK: - Views
     internal lazy var showCollectionView: UICollectionView = {
@@ -22,7 +22,7 @@ class SEHomeViewController: UIViewController {
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth + 10.0)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(SEShowCollectionViewCell.self, forCellWithReuseIdentifier: SEHomeViewController.collectionCellIdentifier)
+        collectionView.register(SEShowCollectionViewCell.self, forCellWithReuseIdentifier: SEPeopleViewController.collectionCellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
@@ -48,9 +48,9 @@ class SEHomeViewController: UIViewController {
         return bar
     }()
     // MARK: - Properties
-    private lazy var configurator: SEHomeConfigurator = { return SEHomeConfigurator(from: self) }()
-    private lazy var presenter: SEHomePresenterInput = { return self.configurator.configure() }()
-    private static let controllerName: String = NSLocalizedString(SEKeys.MessageKeys.listTitle, comment: SEKeys.MessageKeys.emptyText)
+    private lazy var configurator: SEPeopleConfigurator = { return SEPeopleConfigurator(from: self) }()
+    private lazy var presenter: SEPeoplePresenterInput = { return self.configurator.configure() }()
+    private static let controllerName: String = "People"
     private static let collectionCellIdentifier: String = "showCell"
 
     // MARK: - Life Cycle
@@ -66,8 +66,7 @@ class SEHomeViewController: UIViewController {
     }
     
     private func initView() {
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.title = SEHomeViewController.controllerName
+        self.title = SEPeopleViewController.controllerName
         self.navigationItem.searchController = self.searchBar
         self.view.backgroundColor = SEStylesApp.Color.SE_SecondaryColor
         self.view.addSubview(self.showCollectionView)
@@ -80,25 +79,25 @@ class SEHomeViewController: UIViewController {
                                      self.searchResultErrorLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                                      self.searchResultErrorLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.8)])
         self.searchResultErrorLabel.isHidden = true
-        self.presenter.getShowList()
+        self.presenter.getPeopleList()
     }
 }
 
 // MARK: - SEHomeView's methods
-extension SEHomeViewController: SEHomeView {
+extension SEPeopleViewController: SEPeopleView {
     func didRetrieveData() {
         self.showCollectionView.reloadData()
     }
 }
 
 // MARK: - UICollectionViewDelegate's methods
-extension SEHomeViewController: UICollectionViewDelegate {
+extension SEPeopleViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.presenter.showDetail(from: indexPath)
     }
 }
 // MARK: - UICollectionViewDatasource's methods
-extension SEHomeViewController: UICollectionViewDataSource {
+extension SEPeopleViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.presenter.numberOfSections
     }
@@ -106,40 +105,40 @@ extension SEHomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return self.presenter.showListCount
+            return self.presenter.peopleListCount
         case 1:
             return self.presenter.shimmerListCount
         default:
-            return self.presenter.showListCount
+            return self.presenter.peopleListCount
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SEHomeViewController.collectionCellIdentifier, for: indexPath) as? SEShowCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SEPeopleViewController.collectionCellIdentifier, for: indexPath) as? SEShowCollectionViewCell else {
             return UICollectionViewCell()
         }
         switch indexPath.section {
-        case 0: cell.setupCell(from: self.presenter.getShow(from: indexPath))
+        case 0: cell.setupCell(from: self.presenter.getPerson(from: indexPath))
         case 1: cell.setupShimmerCell()
-        default: cell.setupCell(from: self.presenter.getShow(from: indexPath))
+        default: cell.setupCell(from: self.presenter.getPerson(from: indexPath))
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == self.presenter.shimmerListCount - 1 && indexPath.section == 1 && !self.searchBar.searchBar.searchTextField.isFirstResponder {
-            self.presenter.getShowList()
+            self.presenter.getPeopleList()
         }
     }
 }
 
 // MARK: - UISearchResultsUpdating's method
-extension SEHomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+extension SEPeopleViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        self.presenter.searchShow(byId: searchController.searchBar.searchTextField.text ?? SEKeys.MessageKeys.emptyText)
+        self.presenter.searchPeople(byId: searchController.searchBar.searchTextField.text ?? SEKeys.MessageKeys.emptyText)
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
-        self.presenter.searchShow(byId: SEKeys.MessageKeys.emptyText)
+        self.presenter.searchPeople(byId: SEKeys.MessageKeys.emptyText)
     }
 }

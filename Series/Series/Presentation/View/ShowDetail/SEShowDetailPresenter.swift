@@ -95,9 +95,9 @@ extension SEShowDetailPresenter: SEShowDetailPresenterInput {
         
         // After all the data is uploaded notify the changes to the view
         self.detailGroup.notify(queue: .main) { [weak self] in
-            let days = self?.showInformation?.schedule?.days.joined(separator: " ") ?? SEKeys.MessageKeys.emptyText
+            let days = self?.showInformation?.schedule?.days.joined(separator: "-") ?? SEKeys.MessageKeys.emptyText
             let schedule = self?.showInformation?.schedule?.time ?? SEKeys.MessageKeys.emptyText
-            self?.output?.didRetrieveData(name: self?.showInformation?.name ?? SEKeys.MessageKeys.emptyText, date: schedule + days, genres: self?.showInformation?.genres.joined(separator: " ") ?? SEKeys.MessageKeys.emptyText, summary: self?.showInformation?.summary ?? SEKeys.MessageKeys.emptyText, posterData: self?.imageData ?? Data())
+            self?.output?.didRetrieveData(name: self?.showInformation?.name ?? SEKeys.MessageKeys.emptyText, date: schedule + "-" + days, genres: self?.showInformation?.genres.joined(separator: " ") ?? SEKeys.MessageKeys.emptyText, summary: self?.showInformation?.summary ?? SEKeys.MessageKeys.emptyText, posterData: self?.imageData ?? Data())
         }
     }
     
