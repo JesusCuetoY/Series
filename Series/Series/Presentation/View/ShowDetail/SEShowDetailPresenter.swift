@@ -47,19 +47,35 @@ class SEShowDetailPresenter {
     
     private func makeEpisodesData(from seasons: [SEShowSeasonModel], completion: @escaping() -> Void) {
         let episodesGroup = DispatchGroup()
+        var orderArray: [Int] = []
         for season in seasons {
             episodesGroup.enter()
             self.interactor.getEpisodesBySeason(id: "\(season.id)") { [weak self] episodeList, episodeListData in
+                orderArray.append(season.id)
                 self?.episodesBySeason.append(episodeList)
                 self?.episodesBySeasonData.append(episodeListData)
                 episodesGroup.leave()
             } failure: { [weak self] _ in
+                orderArray.append(season.id)
                 self?.episodesBySeason.append([])
                 self?.episodesBySeasonData.append([])
                 episodesGroup.leave()
             }
         }
-        episodesGroup.notify(queue: .main) {
+        episodesGroup.notify(queue: .main) { [weak self] in
+            // Order the seasons data
+            for _ in 0 ..< orderArray.count {
+                var swapped = false
+                for index in 1 ..< orderArray.count {
+                    if orderArray[index - 1] > orderArray[index] {
+                        orderArray.swapAt(index - 1, index)
+                        self?.episodesBySeason.swapAt(index - 1, index)
+                        self?.episodesBySeasonData.swapAt(index - 1, index)
+                        swapped = true
+                    }
+                }
+                if !swapped { break }
+            }
             completion()
         }
     }
